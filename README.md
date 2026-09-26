@@ -22,6 +22,24 @@ Detects any object inside the train gauge (±1.35 m width, 0.20–3.40 m above r
 - RAM: 8 GB min, 16 GB recommended
 - Disk: 50 GB for datasets (bags are **not** in the repo)
 
+### Windows: important notes
+
+If you run on Windows with Docker Desktop + Git Bash, three issues may bite:
+
+1. **Line endings in entrypoint.sh.** Fixed via `.gitattributes` (`*.sh text eol=lf`). If your clone was made before this file, run:
+   ```bash
+   git rm --cached -r . && git reset --hard
+   ```
+2. **MSYS path conversion.** Git Bash rewrites `/out` → `C:/Program Files/Git/out`. Always prefix `docker run -v` with `MSYS_NO_PATHCONV=1`:
+   ```bash
+   MSYS_NO_PATHCONV=1 docker run --rm -v "C:/path/to/bags:/bags:ro" ...
+   ```
+3. **Non-ASCII or spaces in BAG_DIR.** Docker Desktop may not bind-mount Cyrillic paths. Copy bags to an ASCII path first:
+   ```bash
+   mkdir -p /c/VSC/bags_ascii/cloud_with_fake_obj
+   cp "/c/VSC/Проект №5/.../cloud_with_fake_obj_0.db3" /c/VSC/bags_ascii/cloud_with_fake_obj/
+   ```
+
 ## Quick start
 
 ```bash
