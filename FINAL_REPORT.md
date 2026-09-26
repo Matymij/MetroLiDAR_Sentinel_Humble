@@ -90,9 +90,21 @@ CSV со всеми объектами
 - 0.3×0.3 м надёжно детектируется только до 50–60 м
 
 ## 10. Артефакты
-- `results_v9/SUMMARY.csv` — сводная таблица
-- `results_v9/*.csv` — детальные треки по каждому bag
-- `results_v8/new_data_consolidated.csv` — 6,689 объектов из new_data
-- `results_v8/new_data.csv` — сырые 11,271 кадр × треки
-- `scripts/offline_pipeline.py` — пайплайн v9
-- `scripts/stream_zst_pipeline.py` — потоковая обработка .zst
+
+**Код:**
+- `scripts/offline_pipeline_FINAL.py` — основной пайплайн (v11, 36–55 fps)
+- `scripts/stream_zst_pipeline.py` — потоковая обработка `.zst`
+- `scripts/offline_pipeline.py` — v9 (для сравнения)
+- `src/` — ROS 2 пакеты (C++ preprocessor, Python detector, msgs)
+
+**Результаты (в репозитории):**
+- `results_v9/v11_FINAL.csv` — прогон на `cloud_with_fake_obj` (1 510 кадров, 65 объектов, 190.5 м)
+- `results_v9/new_data_FINAL.csv` — прогон на `new_data` (11 271 кадр, 3 625 объектов, 205.4 м)
+- `results_v9/doubleT_obstacle.csv`, `doubleT_platform.csv`, `roundT_doubleT.csv`, `roundT_pressureGate_roundT.csv`, `roundT_squareT_pressureGate_squareT.csv`, `squareT_platform_squareT_switch.csv` — 6 bag'ов for_hackathon (2 488 кадров, 190 объектов, 208.8 м)
+- `results/final/final_ok.csv` — финальная сводка
+- `results_v9/*.log` — логи прогонов
+
+**Документация:**
+- `README.md`, `README_RU.md` — инструкция запуска
+- `docs/ARCHITECTURE.md`, `docs/ALGORITHM.md`, `docs/BENCHMARK.md`
+- `FINAL_REPORT.md` — этот файл

@@ -74,13 +74,14 @@ docs/                         # Документация
 results_v8/, results_v9/      # Результаты
 FINAL_REPORT.md               # Итоговый отчёт
 
-Результаты
-Источник	Кадров	Объектов	Сильных	Max dist
-cloud_with_fake_obj	1 510	65	18	190.5 м
-new_data	11 271	~6600	—	~200 м
-for_hackathon	2 488	190	36	208.8 м
-Ограничения (Pandar128E3X)
-Instrumented range: 230 м
+## Результаты
+
+| Источник | Кадров | Объектов | Max dist |
+|---|---|---|---|
+| `cloud_with_fake_obj` | 1 510 | 65 | 190.5 м |
+| `new_data` | 11 271 | 3 625 | 205.4 м |
+| `for_hackathon` (6 bag'ов) | 2 488 | 190 | 208.8 м |
+| **ВСЕГО** | **15 269** | **3 880** | **208.8 м** |
 
 Detection range: 200 м @ 10% reflectivity
 
