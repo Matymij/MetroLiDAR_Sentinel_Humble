@@ -29,7 +29,7 @@
 
 ```bash
 # 1. Клонировать
-git clone https://github.com/<your-username>/MetroLiDAR_Sentinel_Humble.git
+git clone https://github.com/Matymij/MetroLiDAR_Sentinel_Humble.git
 cd MetroLiDAR_Sentinel_Humble
 
 # 2. Положить bag'и в ./bags/
