@@ -57,8 +57,9 @@ Input	Frames	Time	Objects	Max dist
 cloud_with_fake_obj	1 510	~30 s	65	190.5 m
 for_hackathon (6 bags)	2 488	~3 min	190	208.8 m
 new_data (streamed from .zst)	11 271	~10 min	3 625	205.4 m
-Repository layout
-text
+## Repository layout
+
+```text
 config/         params.yaml, fastdds.xml
 docker/         entrypoint.sh
 docs/           ARCHITECTURE.md, ALGORITHM.md, BENCHMARK.md
@@ -71,7 +72,7 @@ src/            ROS 2 packages (C++ preprocessor, Python detector, msgs)
 Datasets
 Bags are not committed (7+ GB each). The report uses three sources:
 
-cloud_with_fake_obj — synthetic obstacles in the gauge (ground truth).
+- `cloud_with_fake_obj` — synthetic obstacles in the gauge (ground truth).
 - `for_hackathon` — 6 tunnel scenarios (doubleT, roundT, squareT, pressure gate, switch).
 - `new_data` — 11 271 frames from 215+ tunnel recordings.
 
