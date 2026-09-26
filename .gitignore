@@ -1,11 +1,15 @@
-# === Датasets ===
+cd "/c/VSC/Проект №5/MetroLiDAR_Sentinel_Humble"
+
+cat > .gitignore <<'EOF'
+# === Datasets (большие, не в репо) ===
 bags/
-bags;C/
 data/
 *.db3
 *.mcap
 *.zst
 *.bag
+*.tar
+*.tar.zst
 
 # === Python ===
 .venv/
@@ -14,31 +18,40 @@ __pycache__/
 *.pyc
 *.pyo
 *.egg-info/
+.pytest_cache/
 
-# === ROS2 ===
+# === ROS 2 ===
 build/
 install/
 log/
 COLCON_IGNORE
 
-# === IDE ===
+# === IDE / OS ===
 .vscode/
 .idea/
 *.swp
+.DS_Store
+Thumbs.db
 
 # === Бэкапы ===
 _backup_*/
 
-# === CSV: игнорируем все, кроме results ===
+# === CSV: игнорируем всё, кроме разрешённого ===
 *.csv
 !results_v8/*.csv
 !results_v9/*.csv
 !results_v8/*.log
 !results_v9/*.log
+results/*
+!results/final/
+!results/final/**
 
-# === Мусор от shell-команд ===
-=*
-
-# Архив экспериментов
+# === Архив экспериментов ===
 _archive/
 *.so
+
+# === Мусор от shell ===
+=*
+EOF
+
+wc -l .gitignore
