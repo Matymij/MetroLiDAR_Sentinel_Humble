@@ -11,6 +11,10 @@
 - min_hits=15
 - Прогресс каждые 50 кадров
 """
+
+import os
+import sqlite3
+import glob
 import csv
 import sys
 import time
@@ -122,17 +126,12 @@ def grid_dbscan_numba(pts, eps, min_pts):
         py = sorted_pts[j, 1]
         pz = sorted_pts[j, 2]
 
-        # Проверяем только 14 из 27 ячеек (без симметрии)
         for ddx in range(-1, 2):
             cx = cj0 + ddx
             for ddy in range(-1, 2):
                 cy = cj1 + ddy
                 for ddz in range(-1, 2):
                     cz = cj2 + ddz
-                    # Skip "negative" symmetric cells: если (ddx,ddy,ddz) < (0,0,0)
-                    # лексикографически, то пропускаем
-                    if (ddx < 0) or (ddx == 0 and ddy < 0) or (ddx == 0 and ddy == 0 and ddz < 0):
-                        continue
                     nk = ((cx + 1048576) << 42) | ((cy + 1048576) << 21) | (cz + 1048576)
                     lo = np.searchsorted(sorted_keys, nk, side='left')
                     hi = np.searchsorted(sorted_keys, nk, side='right')
@@ -571,42 +570,57 @@ class Tracker:
 
 
 # ==== БЫСТРАЯ ЗАГРУЗКА ====
-def stream_frames(bag_dir):
-    """Генератор (ts, pts). pts: Nx3 float32 (только x,y,z).
-    Извлекает x,y,z из PointCloud2.data через numpy — 20× быстрее read_points.
-    """
-    reader = rosbag2_py.SequentialReader()
-    reader.open(
-        rosbag2_py.StorageOptions(uri=str(bag_dir), storage_id="sqlite3"),
-        rosbag2_py.ConverterOptions("cdr", "cdr"),
-    )
-    topics = {t.name: t.type for t in reader.get_all_topics_and_types()}
-    cloud_topic = next((n for n, t in topics.items()
-                        if t == "sensor_msgs/msg/PointCloud2"), None)
-    if cloud_topic is None:
-        raise RuntimeError("no PointCloud2")
+def stream_frames_raw(bag_dir):
+    """Прямое чтение sqlite .db3 без rosbag2_py. Быстрее в 2-3×."""
+    # Найти .db3 файл
+    db3_files = glob.glob(os.path.join(str(bag_dir), "*.db3"))
+    if not db3_files:
+        # попробовать вложенную папку
+        db3_files = glob.glob(os.path.join(str(bag_dir), "*", "*.db3"))
+    if not db3_files:
+        raise RuntimeError(f"no .db3 in {bag_dir}")
+    db3_path = db3_files[0]
 
-    frame_idx = 0
-    while reader.has_next():
-        topic, data, ts = reader.read_next()
-        if topic != cloud_topic:
+    # Открыть read-only
+    uri = f"file:{db3_path}?mode=ro"
+    conn = sqlite3.connect(uri, uri=True, check_same_thread=False)
+
+    # Найти topic_id для PointCloud2
+    cur = conn.execute(
+        "SELECT id FROM topics WHERE type='sensor_msgs/msg/PointCloud2' LIMIT 1"
+    )
+    row = cur.fetchone()
+    if row is None:
+        raise RuntimeError("no PointCloud2 topic")
+    topic_id = row[0]
+
+    cur = conn.execute(
+        "SELECT timestamp, data FROM messages WHERE topic_id=? ORDER BY timestamp",
+        (topic_id,)
+    )
+
+    for ts, data in cur:
+        msg = deserialize_message(bytes(data), PointCloud2)
+        if msg.width == 0 or msg.height == 0:
             continue
-        msg = deserialize_message(data, PointCloud2)
-        
-        # Быстрое извлечение xyz: data → uint8 [N, point_step] → первые 12 байт → 3×float32
         n = msg.width * msg.height
         ps = msg.point_step
-        buf = np.frombuffer(msg.data, dtype=np.uint8, count=n * ps)
-        if len(buf) < n * ps:
+        if ps < 12:
             continue
-        xyz = buf.reshape(n, ps)[:, :12].view(np.float32).reshape(n, 3).copy()
-        # intensity filter отключён: см. анализ в docs/BENCHMARK.md
+        # view без copy
+        arr = np.frombuffer(msg.data, dtype=np.uint8)
+        xyz = arr.reshape(n, ps)[:, :12].view(np.float32).reshape(n, 3)
+        # фильтр NaN (редко, но безопасно)
         finite = np.isfinite(xyz).all(axis=1)
         if not finite.all():
-            xyz = xyz[finite]
+            xyz = xyz[finite].copy()
         yield ts, xyz
 
+    conn.close()
 
+
+# Совместимость
+stream_frames = stream_frames_raw
 def stream_loader(bag_dir, count):
     """Возвращает generator для Pool.imap с индексацией."""
     for i, (ts, pts) in enumerate(stream_frames(bag_dir)):

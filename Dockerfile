@@ -20,6 +20,7 @@ RUN python3 -m pip install --no-cache-dir \
     "scipy>=1.10" \
     "zstandard>=0.22" \
     "numba>=0.59" \
+    "pybind11>=2.11" \
     "cupy-cuda12x>=13.0" \
     --extra-index-url https://pypi.nvidia.com
 
