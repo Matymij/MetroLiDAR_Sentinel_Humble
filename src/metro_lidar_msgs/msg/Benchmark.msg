@@ -1,0 +1,7 @@
+std_msgs/Header header
+float32 processing_time_ms
+float32 frame_rate_hz
+uint32 point_count
+uint32 candidate_count
+float32 cpu_percent
+float32 rss_mb

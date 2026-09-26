@@ -1,0 +1,75 @@
+pointcloud_preprocessor:
+  ros__parameters:
+    voxel_size: 0.05
+    min_range: 0.3
+    max_range: 240.0
+    z_min: -1.5
+    z_max: 6.5
+    y_min: -500.0
+    y_max: 50.0
+    sor_mean_k: 6
+    sor_stddev: 3.5
+
+obstacle_detector:
+  ros__parameters:
+    # === Система координат ===
+    # В лидаре рельс = z=0, forward = -Y, lateral = X, up = +Z
+    forward_axis: "-Y"
+    rail_z_in_lidar: 0.0
+
+    # === Габарит поезда (метро) от рельса ===
+    gabarit_half_width: 1.35
+    gabarit_rail_bottom: 0.20
+    gabarit_rail_top: 3.40
+
+    # === Forward/lateral диапазон ===
+    forward_min: 0.3
+    forward_max: 230.0
+    lateral_limit: 4.0
+
+    # === Адаптивные слои ===
+    near_max_m: 50.0
+    mid_max_m: 120.0
+    # 120-230 м — far слой
+
+    # Layer 1: 0-50 м, мелкие объекты 0.3×0.3
+    near_cluster_eps: 0.50
+    near_min_points: 3
+    near_voxel: 0.04
+
+    # Layer 2: 50-120 м
+    mid_cluster_eps: 0.90
+    mid_min_points: 3
+    mid_voxel: 0.10
+
+    # Layer 3: 120-230 м, только крупные
+    far_cluster_eps: 2.50
+    far_min_points: 3
+    far_voxel: 0.30
+
+    # Overhang (свисающие сверху, z > gabarit_rail_top)
+    overhang_min_points: 5
+    overhang_cluster_eps: 1.0
+    overhang_min_size: 0.10
+
+    # === Фильтр по размеру bounding box ===
+    min_bbox_dim: 0.05       # 5 см — не меньше
+    max_bbox_dim: 12.0       # 12 м — не больше (кроме длинных объектов на рельсе)
+    min_bbox_volume: 0.005   # 0.005 м³ = кубик ~17 см
+
+    # === Плотность ===
+    min_density_pts_per_m3: 0.5
+
+    # === Трекинг (главный фильтр от шума!) ===
+    confirm_frames: 3        # объект должен быть в 3 кадрах подряд
+    association_distance: 8.0
+    track_timeout_frames: 10
+    min_hits_for_report: 3
+
+    # === Дистанции риска ===
+    critical_distance: 100.0
+    warning_distance: 180.0
+    far_distance: 230.0
+
+    confidence_min: 0.15
+    publish_unconfirmed: false   # публикуем только подтверждённые

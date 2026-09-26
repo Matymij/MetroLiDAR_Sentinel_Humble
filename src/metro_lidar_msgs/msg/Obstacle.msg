@@ -1,0 +1,14 @@
+std_msgs/Header header
+uint32 id
+bool detected
+bool confirmed
+bool inside_gabarit
+uint8 risk_level
+float32 confidence
+float32 distance_m
+float32 velocity_mps
+float32 ttc_s
+geometry_msgs/Point position
+geometry_msgs/Vector3 size
+float32 gabarit_margin_m
+string class_name

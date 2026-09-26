@@ -1,0 +1,37 @@
+# === Датasets ===
+bags/
+bags;C/
+data/
+*.db3
+*.mcap
+*.zst
+*.bag
+
+# === Python ===
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# === ROS2 ===
+build/
+install/
+log/
+COLCON_IGNORE
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
+
+# === Бэкапы ===
+_backup_*/
+
+# === CSV: игнорируем все, кроме results ===
+*.csv
+!results_v8/*.csv
+!results_v9/*.csv
+!results_v8/*.log
+!results_v9/*.log

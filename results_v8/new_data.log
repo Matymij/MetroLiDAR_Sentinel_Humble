@@ -1,0 +1,709 @@
+streaming /bags/bags/new_data.zst
+
+[1] new_data_30.db3 (408 MB, extract 1.7s)
+  51 frames | process 11.2s | tracks=22 | files done=1
+
+[2] new_data_58.db3 (408 MB, extract 1.0s)
+  51 frames | process 11.2s | tracks=44 | files done=2
+
+[3] new_data_200.db3 (408 MB, extract 1.6s)
+  51 frames | process 17.5s | tracks=45 | files done=3
+
+[4] new_data_84.db3 (408 MB, extract 1.5s)
+  51 frames | process 8.4s | tracks=81 | files done=4
+
+[5] new_data_17.db3 (408 MB, extract 1.7s)
+  51 frames | process 18.5s | tracks=81 | files done=5
+
+[6] new_data_73.db3 (408 MB, extract 1.8s)
+  51 frames | process 11.5s | tracks=92 | files done=6
+
+[7] new_data_122.db3 (408 MB, extract 1.1s)
+  51 frames | process 8.6s | tracks=96 | files done=7
+
+[8] new_data_139.db3 (408 MB, extract 1.4s)
+  51 frames | process 8.5s | tracks=130 | files done=8
+
+[9] new_data_70.db3 (408 MB, extract 1.2s)
+  51 frames | process 10.2s | tracks=138 | files done=9
+
+[10] new_data_133.db3 (408 MB, extract 1.2s)
+  51 frames | process 10.3s | tracks=145 | files done=10
+
+[11] new_data_46.db3 (408 MB, extract 1.1s)
+  51 frames | process 9.3s | tracks=172 | files done=11
+
+[12] new_data_215.db3 (408 MB, extract 1.0s)
+  51 frames | process 15.5s | tracks=178 | files done=12
+
+[13] new_data_93.db3 (408 MB, extract 1.1s)
+  51 frames | process 12.6s | tracks=211 | files done=13
+
+[14] new_data_77.db3 (408 MB, extract 1.1s)
+  51 frames | process 8.1s | tracks=226 | files done=14
+
+[15] new_data_59.db3 (408 MB, extract 1.3s)
+  51 frames | process 9.5s | tracks=245 | files done=15
+
+[16] new_data_143.db3 (408 MB, extract 1.1s)
+  51 frames | process 10.4s | tracks=255 | files done=16
+
+[17] new_data_54.db3 (408 MB, extract 1.1s)
+  51 frames | process 6.7s | tracks=290 | files done=17
+
+[18] new_data_211.db3 (408 MB, extract 1.2s)
+  51 frames | process 16.3s | tracks=296 | files done=18
+
+[19] new_data_148.db3 (408 MB, extract 1.0s)
+  51 frames | process 8.2s | tracks=326 | files done=19
+
+[20] new_data_50.db3 (408 MB, extract 1.2s)
+  51 frames | process 9.8s | tracks=347 | files done=20
+
+[21] new_data_13.db3 (408 MB, extract 1.2s)
+  51 frames | process 14.5s | tracks=362 | files done=21
+
+[22] new_data_101.db3 (408 MB, extract 1.1s)
+  51 frames | process 9.4s | tracks=390 | files done=22
+
+[23] new_data_90.db3 (408 MB, extract 1.0s)
+  51 frames | process 11.1s | tracks=401 | files done=23
+
+[24] new_data_66.db3 (408 MB, extract 1.1s)
+  51 frames | process 8.6s | tracks=430 | files done=24
+
+[25] new_data_64.db3 (408 MB, extract 1.3s)
+  51 frames | process 8.3s | tracks=445 | files done=25
+
+[26] new_data_55.db3 (408 MB, extract 1.1s)
+  51 frames | process 6.5s | tracks=486 | files done=26
+
+[27] new_data_113.db3 (408 MB, extract 1.0s)
+  51 frames | process 5.8s | tracks=510 | files done=27
+
+[28] new_data_194.db3 (408 MB, extract 1.3s)
+  51 frames | process 15.4s | tracks=517 | files done=28
+
+[29] new_data_168.db3 (408 MB, extract 1.0s)
+  51 frames | process 16.6s | tracks=537 | files done=29
+
+[30] new_data_189.db3 (408 MB, extract 1.1s)
+  51 frames | process 8.7s | tracks=546 | files done=30
+
+[31] new_data_47.db3 (408 MB, extract 1.2s)
+  51 frames | process 9.4s | tracks=561 | files done=31
+
+[32] new_data_184.db3 (408 MB, extract 1.0s)
+  51 frames | process 8.5s | tracks=573 | files done=32
+
+[33] new_data_192.db3 (408 MB, extract 1.2s)
+  51 frames | process 6.4s | tracks=588 | files done=33
+
+[34] new_data_146.db3 (408 MB, extract 1.0s)
+  51 frames | process 6.6s | tracks=615 | files done=34
+
+[35] new_data_83.db3 (408 MB, extract 1.2s)
+  51 frames | process 7.4s | tracks=644 | files done=35
+
+[36] new_data_81.db3 (408 MB, extract 1.1s)
+  51 frames | process 9.5s | tracks=667 | files done=36
+
+[37] new_data_118.db3 (408 MB, extract 1.0s)
+  51 frames | process 7.2s | tracks=669 | files done=37
+
+[38] new_data_92.db3 (408 MB, extract 1.3s)
+  51 frames | process 8.8s | tracks=681 | files done=38
+
+[39] new_data_187.db3 (408 MB, extract 1.0s)
+  51 frames | process 7.9s | tracks=700 | files done=39
+
+[40] new_data_120.db3 (408 MB, extract 1.0s)
+  51 frames | process 6.7s | tracks=702 | files done=40
+
+[41] new_data_15.db3 (408 MB, extract 1.1s)
+  51 frames | process 14.1s | tracks=707 | files done=41
+
+[42] new_data_209.db3 (408 MB, extract 1.1s)
+  51 frames | process 17.6s | tracks=734 | files done=42
+
+[43] new_data_205.db3 (408 MB, extract 1.2s)
+  51 frames | process 14.3s | tracks=735 | files done=43
+
+[44] new_data_71.db3 (408 MB, extract 1.1s)
+  51 frames | process 10.9s | tracks=747 | files done=44
+
+[45] new_data_19.db3 (408 MB, extract 1.1s)
+  51 frames | process 16.1s | tracks=767 | files done=45
+
+[46] new_data_173.db3 (408 MB, extract 1.1s)
+  51 frames | process 16.4s | tracks=784 | files done=46
+
+[47] new_data_207.db3 (408 MB, extract 1.1s)
+  51 frames | process 16.2s | tracks=790 | files done=47
+
+[48] new_data_111.db3 (408 MB, extract 1.1s)
+  51 frames | process 11.3s | tracks=828 | files done=48
+
+[49] new_data_25.db3 (408 MB, extract 1.2s)
+  51 frames | process 9.0s | tracks=859 | files done=49
+
+[50] new_data_151.db3 (408 MB, extract 1.1s)
+  51 frames | process 8.0s | tracks=878 | files done=50
+
+[51] new_data_79.db3 (408 MB, extract 1.1s)
+  51 frames | process 8.1s | tracks=879 | files done=51
+
+[52] new_data_178.db3 (408 MB, extract 1.0s)
+  51 frames | process 15.9s | tracks=883 | files done=52
+
+[53] new_data_195.db3 (408 MB, extract 1.1s)
+  51 frames | process 15.7s | tracks=893 | files done=53
+
+[54] new_data_117.db3 (408 MB, extract 1.1s)
+  51 frames | process 6.9s | tracks=896 | files done=54
+
+[55] new_data_171.db3 (408 MB, extract 1.1s)
+  51 frames | process 16.3s | tracks=919 | files done=55
+
+[56] new_data_12.db3 (408 MB, extract 1.1s)
+  51 frames | process 16.3s | tracks=943 | files done=56
+
+[57] new_data_80.db3 (408 MB, extract 1.0s)
+  51 frames | process 7.8s | tracks=951 | files done=57
+
+[58] new_data_134.db3 (408 MB, extract 1.1s)
+  51 frames | process 10.0s | tracks=958 | files done=58
+
+[59] new_data_67.db3 (408 MB, extract 1.1s)
+  51 frames | process 8.0s | tracks=990 | files done=59
+
+[60] new_data_175.db3 (408 MB, extract 1.0s)
+  51 frames | process 15.9s | tracks=993 | files done=60
+
+[61] new_data_138.db3 (408 MB, extract 1.2s)
+  51 frames | process 7.6s | tracks=1004 | files done=61
+
+[62] new_data_6.db3 (408 MB, extract 1.0s)
+  51 frames | process 16.7s | tracks=1040 | files done=62
+
+[63] new_data_27.db3 (408 MB, extract 1.4s)
+  51 frames | process 9.5s | tracks=1054 | files done=63
+
+[64] new_data_126.db3 (408 MB, extract 1.1s)
+  51 frames | process 9.3s | tracks=1058 | files done=64
+
+[65] new_data_210.db3 (408 MB, extract 1.2s)
+  51 frames | process 15.8s | tracks=1079 | files done=65
+
+[66] new_data_159.db3 (408 MB, extract 1.3s)
+  51 frames | process 17.3s | tracks=1085 | files done=66
+
+[67] new_data_196.db3 (408 MB, extract 1.1s)
+  51 frames | process 15.8s | tracks=1104 | files done=67
+
+[68] new_data_176.db3 (408 MB, extract 1.2s)
+  51 frames | process 15.1s | tracks=1104 | files done=68
+
+[69] new_data_91.db3 (408 MB, extract 1.1s)
+  51 frames | process 11.0s | tracks=1127 | files done=69
+
+[70] new_data_7.db3 (408 MB, extract 1.0s)
+  51 frames | process 16.3s | tracks=1143 | files done=70
+
+[71] new_data_112.db3 (408 MB, extract 1.0s)
+  51 frames | process 6.1s | tracks=1160 | files done=71
+
+[72] new_data_96.db3 (408 MB, extract 1.0s)
+  51 frames | process 9.1s | tracks=1178 | files done=72
+
+[73] new_data_121.db3 (408 MB, extract 1.1s)
+  51 frames | process 7.9s | tracks=1183 | files done=73
+
+[74] new_data_145.db3 (408 MB, extract 1.0s)
+  51 frames | process 7.1s | tracks=1222 | files done=74
+
+[75] new_data_2.db3 (408 MB, extract 1.0s)
+  51 frames | process 11.7s | tracks=1247 | files done=75
+
+[76] new_data_185.db3 (408 MB, extract 0.9s)
+  51 frames | process 8.6s | tracks=1252 | files done=76
+
+[77] new_data_174.db3 (408 MB, extract 1.2s)
+  51 frames | process 16.8s | tracks=1270 | files done=77
+
+[78] new_data_183.db3 (408 MB, extract 1.0s)
+  51 frames | process 16.9s | tracks=1292 | files done=78
+
+[79] new_data_150.db3 (408 MB, extract 1.0s)
+  51 frames | process 8.2s | tracks=1316 | files done=79
+
+[80] new_data_37.db3 (408 MB, extract 1.1s)
+  51 frames | process 15.2s | tracks=1334 | files done=80
+
+[81] new_data_136.db3 (408 MB, extract 1.0s)
+  51 frames | process 13.8s | tracks=1348 | files done=81
+
+[82] new_data_62.db3 (408 MB, extract 1.1s)
+  51 frames | process 9.0s | tracks=1370 | files done=82
+
+[83] new_data_198.db3 (408 MB, extract 1.1s)
+  51 frames | process 16.4s | tracks=1381 | files done=83
+
+[84] new_data_155.db3 (408 MB, extract 1.0s)
+  51 frames | process 15.6s | tracks=1381 | files done=84
+
+[85] new_data_105.db3 (408 MB, extract 1.2s)
+  51 frames | process 9.9s | tracks=1410 | files done=85
+
+[86] new_data_3.db3 (408 MB, extract 1.4s)
+  51 frames | process 15.6s | tracks=1418 | files done=86
+
+[87] new_data_204.db3 (408 MB, extract 1.0s)
+  51 frames | process 15.6s | tracks=1429 | files done=87
+
+[88] new_data_35.db3 (408 MB, extract 1.1s)
+  51 frames | process 10.2s | tracks=1465 | files done=88
+
+[89] new_data_108.db3 (408 MB, extract 1.1s)
+  51 frames | process 7.5s | tracks=1473 | files done=89
+
+[90] new_data_26.db3 (408 MB, extract 1.1s)
+  51 frames | process 9.5s | tracks=1500 | files done=90
+
+[91] new_data_129.db3 (408 MB, extract 1.1s)
+  51 frames | process 10.7s | tracks=1507 | files done=91
+
+[92] new_data_1.db3 (408 MB, extract 1.3s)
+  51 frames | process 18.4s | tracks=1532 | files done=92
+
+[93] new_data_82.db3 (408 MB, extract 0.9s)
+  51 frames | process 7.3s | tracks=1562 | files done=93
+
+[94] new_data_142.db3 (408 MB, extract 1.0s)
+  51 frames | process 10.5s | tracks=1583 | files done=94
+
+[95] new_data_52.db3 (408 MB, extract 0.9s)
+  51 frames | process 9.4s | tracks=1610 | files done=95
+
+[96] new_data_38.db3 (408 MB, extract 1.3s)
+  51 frames | process 9.8s | tracks=1627 | files done=96
+
+[97] new_data_202.db3 (408 MB, extract 1.3s)
+  51 frames | process 15.2s | tracks=1627 | files done=97
+
+[98] new_data_208.db3 (408 MB, extract 1.2s)
+  51 frames | process 16.5s | tracks=1648 | files done=98
+
+[99] new_data_45.db3 (408 MB, extract 1.0s)
+  51 frames | process 8.8s | tracks=1671 | files done=99
+
+[100] new_data_130.db3 (408 MB, extract 1.1s)
+  51 frames | process 10.2s | tracks=1677 | files done=100
+
+[101] new_data_109.db3 (408 MB, extract 1.4s)
+  51 frames | process 7.1s | tracks=1681 | files done=101
+
+[102] new_data_57.db3 (408 MB, extract 1.6s)
+  51 frames | process 9.1s | tracks=1713 | files done=102
+
+[103] new_data_39.db3 (408 MB, extract 1.0s)
+  51 frames | process 8.6s | tracks=1718 | files done=103
+
+[104] new_data_182.db3 (408 MB, extract 1.0s)
+  51 frames | process 16.3s | tracks=1726 | files done=104
+
+[105] new_data_161.db3 (408 MB, extract 1.2s)
+  51 frames | process 17.3s | tracks=1729 | files done=105
+
+[106] new_data_94.db3 (408 MB, extract 1.5s)
+  51 frames | process 13.2s | tracks=1769 | files done=106
+
+[107] new_data_8.db3 (408 MB, extract 1.3s)
+  51 frames | process 18.3s | tracks=1778 | files done=107
+
+[108] new_data_60.db3 (408 MB, extract 1.3s)
+  51 frames | process 10.4s | tracks=1808 | files done=108
+
+[109] new_data_166.db3 (408 MB, extract 1.4s)
+  51 frames | process 15.1s | tracks=1809 | files done=109
+
+[110] new_data_164.db3 (408 MB, extract 1.2s)
+  51 frames | process 17.1s | tracks=1809 | files done=110
+
+[111] new_data_180.db3 (408 MB, extract 1.5s)
+  51 frames | process 16.7s | tracks=1811 | files done=111
+
+[112] new_data_18.db3 (408 MB, extract 1.4s)
+  51 frames | process 17.1s | tracks=1827 | files done=112
+
+[113] new_data_69.db3 (408 MB, extract 1.4s)
+  51 frames | process 10.2s | tracks=1848 | files done=113
+
+[114] new_data_163.db3 (408 MB, extract 1.4s)
+  51 frames | process 18.1s | tracks=1852 | files done=114
+
+[115] new_data_86.db3 (408 MB, extract 1.5s)
+  51 frames | process 7.2s | tracks=1875 | files done=115
+
+[116] new_data_170.db3 (408 MB, extract 1.7s)
+  51 frames | process 18.3s | tracks=1878 | files done=116
+
+[117] new_data_188.db3 (408 MB, extract 1.6s)
+  51 frames | process 9.7s | tracks=1894 | files done=117
+
+[118] new_data_119.db3 (408 MB, extract 1.3s)
+  51 frames | process 7.9s | tracks=1897 | files done=118
+
+[119] new_data_100.db3 (408 MB, extract 1.4s)
+  51 frames | process 10.1s | tracks=1927 | files done=119
+
+[120] new_data_48.db3 (408 MB, extract 1.3s)
+  51 frames | process 10.2s | tracks=1943 | files done=120
+
+[121] new_data_172.db3 (408 MB, extract 1.5s)
+  51 frames | process 18.0s | tracks=1964 | files done=121
+
+[122] new_data_99.db3 (408 MB, extract 1.5s)
+  51 frames | process 10.1s | tracks=1977 | files done=122
+
+[123] new_data_22.db3 (408 MB, extract 1.5s)
+  51 frames | process 13.7s | tracks=1983 | files done=123
+
+[124] new_data_154.db3 (408 MB, extract 1.5s)
+  51 frames | process 15.7s | tracks=1990 | files done=124
+
+[125] new_data_11.db3 (408 MB, extract 1.6s)
+  51 frames | process 18.0s | tracks=2022 | files done=125
+
+[126] new_data_85.db3 (408 MB, extract 1.4s)
+  51 frames | process 8.1s | tracks=2045 | files done=126
+
+[127] new_data_20.db3 (408 MB, extract 1.6s)
+  51 frames | process 17.8s | tracks=2055 | files done=127
+
+[128] new_data_165.db3 (408 MB, extract 1.5s)
+  51 frames | process 16.2s | tracks=2056 | files done=128
+
+[129] new_data_4.db3 (408 MB, extract 1.4s)
+  51 frames | process 18.4s | tracks=2064 | files done=129
+
+[130] new_data_162.db3 (408 MB, extract 1.5s)
+  51 frames | process 19.3s | tracks=2082 | files done=130
+
+[131] new_data_131.db3 (408 MB, extract 1.4s)
+  51 frames | process 11.4s | tracks=2086 | files done=131
+
+[132] new_data_44.db3 (408 MB, extract 1.4s)
+  51 frames | process 11.2s | tracks=2111 | files done=132
+
+[133] new_data_89.db3 (408 MB, extract 1.4s)
+  51 frames | process 7.0s | tracks=2121 | files done=133
+
+[134] new_data_110.db3 (408 MB, extract 1.5s)
+  51 frames | process 14.1s | tracks=2155 | files done=134
+
+[135] new_data_140.db3 (408 MB, extract 1.2s)
+  51 frames | process 11.2s | tracks=2172 | files done=135
+
+[136] new_data_63.db3 (408 MB, extract 1.6s)
+  51 frames | process 2.7s | tracks=2191 | files done=136
+
+[137] new_data_102.db3 (408 MB, extract 1.5s)
+  51 frames | process 11.1s | tracks=2203 | files done=137
+
+[138] new_data_0.db3 (408 MB, extract 1.3s)
+  51 frames | process 15.0s | tracks=2235 | files done=138
+
+[139] new_data_78.db3 (408 MB, extract 1.9s)
+  51 frames | process 9.9s | tracks=2255 | files done=139
+
+[140] new_data_217.db3 (408 MB, extract 1.6s)
+  51 frames | process 18.4s | tracks=2258 | files done=140
+
+[141] new_data_203.db3 (408 MB, extract 1.6s)
+  51 frames | process 16.0s | tracks=2258 | files done=141
+
+[142] new_data_197.db3 (408 MB, extract 1.5s)
+  51 frames | process 17.7s | tracks=2282 | files done=142
+
+[143] new_data_144.db3 (408 MB, extract 1.4s)
+  51 frames | process 10.5s | tracks=2310 | files done=143
+
+[144] new_data_61.db3 (408 MB, extract 1.6s)
+  51 frames | process 15.6s | tracks=2324 | files done=144
+
+[145] new_data_190.db3 (408 MB, extract 1.8s)
+  51 frames | process 10.2s | tracks=2333 | files done=145
+
+[146] new_data_34.db3 (408 MB, extract 1.7s)
+  51 frames | process 11.4s | tracks=2350 | files done=146
+
+[147] new_data_107.db3 (408 MB, extract 1.5s)
+  51 frames | process 10.2s | tracks=2355 | files done=147
+
+[148] new_data_98.db3 (408 MB, extract 1.3s)
+  51 frames | process 10.1s | tracks=2383 | files done=148
+
+[149] new_data_193.db3 (408 MB, extract 1.5s)
+  51 frames | process 11.0s | tracks=2396 | files done=149
+
+[150] new_data_169.db3 (408 MB, extract 1.7s)
+  51 frames | process 18.7s | tracks=2405 | files done=150
+
+[151] new_data_213.db3 (408 MB, extract 1.4s)
+  51 frames | process 18.5s | tracks=2409 | files done=151
+
+[152] new_data_40.db3 (408 MB, extract 1.4s)
+  51 frames | process 9.1s | tracks=2432 | files done=152
+
+[153] new_data_95.db3 (408 MB, extract 1.4s)
+  51 frames | process 10.3s | tracks=2448 | files done=153
+
+[154] new_data_97.db3 (408 MB, extract 1.6s)
+  51 frames | process 10.3s | tracks=2459 | files done=154
+
+[155] new_data_14.db3 (408 MB, extract 1.9s)
+  51 frames | process 18.6s | tracks=2466 | files done=155
+
+[156] new_data_103.db3 (408 MB, extract 1.9s)
+  51 frames | process 11.2s | tracks=2479 | files done=156
+
+[157] new_data_216.db3 (408 MB, extract 1.3s)
+  51 frames | process 18.0s | tracks=2480 | files done=157
+
+[158] new_data_199.db3 (408 MB, extract 1.3s)
+  51 frames | process 17.9s | tracks=2501 | files done=158
+
+[159] new_data_21.db3 (408 MB, extract 1.5s)
+  51 frames | process 14.8s | tracks=2505 | files done=159
+
+[160] new_data_220.db3 (408 MB, extract 1.4s)
+  51 frames | process 18.7s | tracks=2532 | files done=160
+
+[161] new_data_49.db3 (408 MB, extract 1.7s)
+  51 frames | process 10.5s | tracks=2554 | files done=161
+
+[162] new_data_152.db3 (408 MB, extract 1.5s)
+  51 frames | process 8.9s | tracks=2570 | files done=162
+
+[163] new_data_181.db3 (408 MB, extract 1.5s)
+  51 frames | process 17.6s | tracks=2572 | files done=163
+
+[164] new_data_160.db3 (408 MB, extract 1.6s)
+  51 frames | process 19.4s | tracks=2573 | files done=164
+
+[165] new_data_9.db3 (408 MB, extract 1.5s)
+  51 frames | process 17.9s | tracks=2577 | files done=165
+
+[166] new_data_28.db3 (408 MB, extract 1.5s)
+  51 frames | process 10.1s | tracks=2603 | files done=166
+
+[167] new_data_115.db3 (408 MB, extract 1.5s)
+  51 frames | process 6.8s | tracks=2622 | files done=167
+
+[168] new_data_42.db3 (408 MB, extract 1.4s)
+  51 frames | process 9.9s | tracks=2646 | files done=168
+
+[169] new_data_219.db3 (408 MB, extract 1.6s)
+  51 frames | process 18.6s | tracks=2662 | files done=169
+
+[170] new_data_124.db3 (408 MB, extract 1.3s)
+  51 frames | process 9.5s | tracks=2664 | files done=170
+
+[171] new_data_218.db3 (408 MB, extract 1.6s)
+  51 frames | process 18.7s | tracks=2676 | files done=171
+
+[172] new_data_114.db3 (408 MB, extract 1.4s)
+  51 frames | process 6.9s | tracks=2695 | files done=172
+
+[173] new_data_153.db3 (408 MB, extract 1.6s)
+  51 frames | process 14.4s | tracks=2706 | files done=173
+
+[174] new_data_127.db3 (408 MB, extract 1.8s)
+  51 frames | process 11.4s | tracks=2713 | files done=174
+
+[175] new_data_106.db3 (408 MB, extract 1.4s)
+  51 frames | process 10.3s | tracks=2743 | files done=175
+
+[176] new_data_167.db3 (408 MB, extract 1.3s)
+  51 frames | process 15.9s | tracks=2745 | files done=176
+
+[177] new_data_29.db3 (408 MB, extract 1.3s)
+  51 frames | process 10.2s | tracks=2774 | files done=177
+
+[178] new_data_51.db3 (408 MB, extract 1.8s)
+  51 frames | process 16.2s | tracks=2792 | files done=178
+
+[179] new_data_41.db3 (408 MB, extract 1.4s)
+  51 frames | process 10.0s | tracks=2813 | files done=179
+
+[180] new_data_23.db3 (408 MB, extract 1.4s)
+  51 frames | process 6.2s | tracks=2820 | files done=180
+
+[181] new_data_53.db3 (408 MB, extract 1.1s)
+  51 frames | process 7.0s | tracks=2866 | files done=181
+
+[182] new_data_177.db3 (408 MB, extract 1.4s)
+  51 frames | process 17.4s | tracks=2866 | files done=182
+
+[183] new_data_74.db3 (408 MB, extract 1.4s)
+  51 frames | process 11.5s | tracks=2907 | files done=183
+
+[184] new_data_56.db3 (408 MB, extract 1.7s)
+  51 frames | process 7.8s | tracks=2928 | files done=184
+
+[185] new_data_31.db3 (408 MB, extract 1.6s)
+  51 frames | process 9.9s | tracks=2940 | files done=185
+
+[186] new_data_135.db3 (408 MB, extract 1.3s)
+  51 frames | process 10.8s | tracks=2950 | files done=186
+
+[187] new_data_125.db3 (408 MB, extract 1.2s)
+  51 frames | process 8.8s | tracks=2953 | files done=187
+
+[188] new_data_132.db3 (408 MB, extract 1.8s)
+  51 frames | process 12.5s | tracks=2956 | files done=188
+
+[189] new_data_179.db3 (408 MB, extract 1.9s)
+  51 frames | process 16.2s | tracks=2960 | files done=189
+
+[190] new_data_201.db3 (408 MB, extract 1.2s)
+  51 frames | process 15.4s | tracks=2961 | files done=190
+
+[191] new_data_212.db3 (408 MB, extract 1.2s)
+  51 frames | process 16.7s | tracks=2965 | files done=191
+
+[192] new_data_214.db3 (408 MB, extract 1.3s)
+  51 frames | process 16.5s | tracks=2966 | files done=192
+
+[193] new_data_186.db3 (408 MB, extract 1.2s)
+  51 frames | process 8.0s | tracks=2982 | files done=193
+
+[194] new_data_68.db3 (408 MB, extract 1.3s)
+  51 frames | process 9.7s | tracks=3000 | files done=194
+
+[195] new_data_206.db3 (408 MB, extract 1.3s)
+  51 frames | process 8.6s | tracks=3000 | files done=195
+
+[196] new_data_76.db3 (408 MB, extract 1.4s)
+  51 frames | process 9.5s | tracks=3008 | files done=196
+
+[197] new_data_149.db3 (408 MB, extract 1.4s)
+  51 frames | process 8.7s | tracks=3030 | files done=197
+
+[198] new_data_16.db3 (408 MB, extract 1.6s)
+  51 frames | process 17.2s | tracks=3033 | files done=198
+
+[199] new_data_147.db3 (408 MB, extract 1.3s)
+  51 frames | process 7.6s | tracks=3071 | files done=199
+
+[200] new_data_32.db3 (408 MB, extract 1.2s)
+  51 frames | process 9.9s | tracks=3082 | files done=200
+
+[201] new_data_72.db3 (408 MB, extract 1.2s)
+  51 frames | process 10.2s | tracks=3092 | files done=201
+
+[202] new_data_156.db3 (408 MB, extract 1.2s)
+  51 frames | process 17.6s | tracks=3099 | files done=202
+
+[203] new_data_33.db3 (408 MB, extract 1.3s)
+  51 frames | process 11.1s | tracks=3117 | files done=203
+
+[204] new_data_88.db3 (408 MB, extract 1.3s)
+  51 frames | process 6.5s | tracks=3126 | files done=204
+
+[205] new_data_116.db3 (408 MB, extract 1.4s)
+  51 frames | process 7.2s | tracks=3132 | files done=205
+
+[206] new_data_191.db3 (408 MB, extract 1.3s)
+  51 frames | process 9.1s | tracks=3147 | files done=206
+
+[207] new_data_24.db3 (408 MB, extract 1.4s)
+  51 frames | process 7.8s | tracks=3154 | files done=207
+
+[208] new_data_158.db3 (408 MB, extract 1.6s)
+  51 frames | process 19.2s | tracks=3173 | files done=208
+
+[209] new_data_141.db3 (408 MB, extract 1.5s)
+  51 frames | process 11.7s | tracks=3187 | files done=209
+
+[210] new_data_5.db3 (408 MB, extract 1.6s)
+  51 frames | process 18.7s | tracks=3205 | files done=210
+
+[211] new_data_36.db3 (408 MB, extract 1.2s)
+  51 frames | process 16.4s | tracks=3233 | files done=211
+
+[212] new_data_104.db3 (408 MB, extract 1.4s)
+  51 frames | process 11.3s | tracks=3238 | files done=212
+
+[213] new_data_123.db3 (408 MB, extract 1.4s)
+  51 frames | process 9.6s | tracks=3241 | files done=213
+
+[214] new_data_43.db3 (408 MB, extract 1.8s)
+  51 frames | process 10.2s | tracks=3276 | files done=214
+
+[215] new_data_87.db3 (408 MB, extract 1.4s)
+  51 frames | process 6.9s | tracks=3287 | files done=215
+
+[216] new_data_10.db3 (408 MB, extract 1.9s)
+  51 frames | process 17.6s | tracks=3300 | files done=216
+
+[217] new_data_128.db3 (408 MB, extract 1.7s)
+  51 frames | process 11.8s | tracks=3307 | files done=217
+
+[218] new_data_65.db3 (408 MB, extract 1.4s)
+  51 frames | process 11.0s | tracks=3334 | files done=218
+
+[219] new_data_75.db3 (408 MB, extract 1.5s)
+  51 frames | process 11.4s | tracks=3353 | files done=219
+
+[220] new_data_137.db3 (408 MB, extract 1.8s)
+  51 frames | process 9.8s | tracks=3355 | files done=220
+
+[221] new_data_157.db3 (408 MB, extract 1.5s)
+  51 frames | process 19.2s | tracks=3377 | files done=221
+
+========================================================================
+  NEW_DATA РЕЗУЛЬТАТЫ
+========================================================================
+  Файлов: 221
+  Кадров: 11271
+  Raw candidates: 153882
+  Rejects: {'too_big': 24112, 'inside_wide': 54857, 'outside_far': 87137, 'too_small': 24496, 'few_points': 100386, 'shape': 21296, 'near_wide': 6676, 'outside_wall': 5562, 'above_wide': 9347, 'above_thin': 4634, 'above_too_high': 16870, 'rail_wide': 1271, 'inside_tall': 310}
+  Время: 2971.7s (3.8 fps)
+
+  TOP-30 объектов:
+  # 1 dist=  80.5м hits=186 zone=INSIDE   size=( 0.63, 4.57, 0.34)
+  # 2 dist=  42.4м hits=133 zone=OUTSIDE  size=( 3.11, 0.35, 2.08)
+  # 3 dist=  71.8м hits=149 zone=OUTSIDE  size=( 4.03, 2.41, 2.75)
+  # 4 dist=  43.2м hits=115 zone=INSIDE   size=( 0.58, 0.56, 2.84)
+  # 5 dist=  80.1м hits=183 zone=OUTSIDE  size=( 0.04, 0.58, 0.54)
+  # 6 dist=  73.1м hits=146 zone=OUTSIDE  size=( 6.30, 1.48, 2.82)
+  # 7 dist=  63.2м hits=140 zone=NEAR     size=( 0.82, 0.46, 2.93)
+  # 8 dist=  85.0м hits=149 zone=INSIDE   size=( 1.83, 3.98, 0.76)
+  # 9 dist=  28.3м hits= 90 zone=OUTSIDE  size=( 3.12, 0.31, 1.92)
+  #10 dist=  34.2м hits=125 zone=OUTSIDE  size=( 0.47, 0.15, 1.44)
+  #11 dist=  44.8м hits=113 zone=INSIDE   size=( 3.41, 0.28, 2.16)
+  #12 dist=  84.4м hits=142 zone=OUTSIDE  size=( 9.43, 0.79, 2.11)
+  #13 dist=  18.3м hits=113 zone=NEAR     size=( 2.89, 1.25, 0.32)
+  #14 dist=  37.9м hits=150 zone=NEAR     size=( 1.08, 0.05, 2.24)
+  #15 dist=  43.9м hits= 82 zone=INSIDE   size=(10.68, 1.28, 2.98)
+  #16 dist=  46.1м hits= 89 zone=INSIDE   size=( 7.64, 0.90, 2.33)
+  #17 dist=  43.6м hits= 84 zone=OUTSIDE  size=( 7.29, 0.92, 2.67)
+  #18 dist=  86.9м hits=118 zone=INSIDE   size=( 3.77, 5.83, 1.15)
+  #19 dist=  80.0м hits=119 zone=INSIDE   size=( 2.88, 5.85, 0.68)
+  #20 dist=  97.3м hits=123 zone=NEAR     size=( 1.33, 1.22, 3.21)
+  #21 dist=  69.1м hits= 92 zone=INSIDE   size=( 5.37, 2.87, 2.70)
+  #22 dist= 114.3м hits= 96 zone=INSIDE   size=(11.33, 2.74, 2.61)
+  #23 dist=  27.2м hits= 79 zone=INSIDE   size=( 3.91, 2.93, 3.18)
+  #24 dist=  61.7м hits= 86 zone=INSIDE   size=( 5.29, 2.51, 3.45)
+  #25 dist=  29.5м hits=128 zone=INSIDE   size=( 0.17, 2.99, 0.02)
+  #26 dist=  86.5м hits=168 zone=INSIDE   size=( 3.01, 2.78, 0.46)
+  #27 dist=  35.7м hits= 93 zone=NEAR     size=( 0.90, 0.57, 3.40)
+  #28 dist=  75.9м hits=150 zone=INSIDE   size=( 0.14, 1.78, 0.34)
+  #29 dist=  37.7м hits=171 zone=INSIDE   size=( 2.07, 1.31, 0.18)
+  #30 dist=  73.9м hits=143 zone=NEAR     size=( 0.28, 0.28, 2.46)
+
+  Всего уникальных: 3377
+  По зонам: {'RAIL': 697, 'INSIDE': 1250, 'OUTSIDE': 1016, 'NEAR': 343, 'ABOVE': 71}
+  Max dist: 205.0 м

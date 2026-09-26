@@ -1,0 +1,21 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+Visualization Manager:
+  Class: ""
+  Global Options:
+    Fixed Frame: lidar
+  Displays:
+    - Class: rviz_default_plugins/PointCloud2
+      Name: Filtered LiDAR
+      Topic: /preprocessing/points
+      Style: Points
+      Size (Pixels): 2
+      Queue Size: 5
+    - Class: rviz_default_plugins/MarkerArray
+      Name: Obstacles and Labels
+      Topic: /obstacle_markers
+      Queue Size: 5
+    - Class: rviz_default_plugins/TF
+      Name: TF
+  Name: MetroLiDAR Sentinel

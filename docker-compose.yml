@@ -1,0 +1,27 @@
+services:
+  sentinel:
+    build: .
+    network_mode: host
+    shm_size: '2gb'
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    environment:
+      RMW_IMPLEMENTATION: rmw_fastrtps_cpp
+      FASTRTPS_DEFAULT_PROFILES_FILE: /ws/config/fastdds.xml
+      ROS_DOMAIN_ID: ${ROS_DOMAIN_ID:-42}
+      RCUTILS_COLORIZED_OUTPUT: "1"
+      QT_X11_NO_MITSHM: "1"
+      DISPLAY: ${DISPLAY:-:0}
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+    volumes:
+      - ./data:/data:ro
+      - ./config:/ws/config:ro
+      - ./rviz:/ws/rviz:ro
+      - ${BAG_DIR:-./bags}:/bags:ro
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw

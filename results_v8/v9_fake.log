@@ -1,0 +1,80 @@
+starting streaming processing of /bags/cloud_with_fake_obj...
+processing (workers=4, streaming)...
+[0m[INFO] [1790286576.453389785] [rosbag2_storage]: Opened database '/bags/cloud_with_fake_obj/cloud_with_fake_obj_0.db3' for READ_ONLY.[0m
+  [50 frames] raw=13 conf=12 fps=1.4 tracks=28
+  [100 frames] raw=9 conf=7 fps=1.9 tracks=33
+  [150 frames] raw=16 conf=14 fps=2.1 tracks=48
+  [200 frames] raw=8 conf=6 fps=2.2 tracks=55
+  [250 frames] raw=6 conf=2 fps=2.2 tracks=61
+  [300 frames] raw=6 conf=4 fps=2.3 tracks=71
+  [350 frames] raw=11 conf=7 fps=2.3 tracks=78
+  [400 frames] raw=23 conf=17 fps=2.3 tracks=97
+  [450 frames] raw=21 conf=14 fps=2.3 tracks=113
+  [500 frames] raw=22 conf=15 fps=2.3 tracks=129
+  [550 frames] raw=17 conf=12 fps=2.3 tracks=144
+  [600 frames] raw=20 conf=15 fps=2.3 tracks=168
+  [650 frames] raw=24 conf=17 fps=2.4 tracks=182
+  [700 frames] raw=29 conf=24 fps=2.4 tracks=212
+  [750 frames] raw=19 conf=13 fps=2.5 tracks=222
+  [800 frames] raw=16 conf=13 fps=2.5 tracks=239
+  [850 frames] raw=2 conf=1 fps=2.5 tracks=245
+  [900 frames] raw=9 conf=6 fps=2.6 tracks=249
+  [950 frames] raw=5 conf=4 fps=2.6 tracks=255
+  [1000 frames] raw=9 conf=9 fps=2.7 tracks=260
+  [1050 frames] raw=3 conf=3 fps=2.7 tracks=265
+  [1100 frames] raw=6 conf=4 fps=2.7 tracks=267
+  [1150 frames] raw=36 conf=17 fps=2.8 tracks=291
+  [1200 frames] raw=29 conf=24 fps=2.8 tracks=318
+  [1250 frames] raw=20 conf=15 fps=2.8 tracks=332
+  [1300 frames] raw=14 conf=6 fps=2.9 tracks=350
+  [1350 frames] raw=16 conf=14 fps=2.9 tracks=371
+  [1400 frames] raw=17 conf=9 fps=2.9 tracks=384
+  [1450 frames] raw=32 conf=22 fps=3.0 tracks=409
+  [1500 frames] raw=32 conf=27 fps=3.0 tracks=437
+
+processing done: 1510 frames in 503.0s (3.0 fps)
+raw candidates: 25340
+rejects: {'too_big': 3222, 'outside_far': 12192, 'shape': 2179, 'few_points': 13611, 'too_small': 2607, 'inside_wide': 4670, 'rail_wide': 283, 'near_wide': 889, 'outside_wall': 259, 'above_thin': 130, 'inside_tall': 37, 'above_wide': 57, 'above_too_high': 62}
+
+========================================================================
+  ФИЛЬТРАЦИЯ ТРЕКОВ
+========================================================================
+  До фильтрации: 439 треков
+  После hits-фильтра: 302
+  После отсева тонких рельс: 296
+  После размера>=0.15м: 296
+  После кластеризации по позиции: 75 уникальных объектов
+
+========================================================================
+  TOP-15 ОБЪЕКТОВ (по score = hits × log(npts) × group)
+========================================================================
+  # 1  dist=  81.0м  score=  164598  hits=1485  group=21  zone=INSIDE    size=( 7.64, 5.29, 2.47)  npts=195
+  # 2  dist=  30.2м  score=   46913  hits=1305  group=12  zone=NEAR      size=( 0.40, 0.30, 1.19)  npts=19
+  # 3  dist=  38.0м  score=   31818  hits= 859  group=11  zone=INSIDE    size=( 1.13, 0.15, 1.61)  npts=28
+  # 4  dist=  87.7м  score=   31674  hits= 820  group=12  zone=INSIDE    size=( 0.65, 3.54, 0.19)  npts=24
+  # 5  dist= 106.6м  score=   26266  hits= 508  group=11  zone=INSIDE    size=(13.23, 3.97, 2.47)  npts=109
+  # 6  dist= 100.3м  score=   22801  hits= 720  group=12  zone=OUTSIDE   size=( 0.21, 2.45, 0.00)  npts=13
+  # 7  dist=  24.3м  score=   19059  hits= 967  group=11  zone=OUTSIDE   size=( 0.34, 0.20, 0.83)  npts=5
+  # 8  dist=  46.7м  score=   17650  hits= 836  group= 8  zone=RAIL      size=( 1.31, 0.28, 0.82)  npts=13
+  # 9  dist=  42.2м  score=   15353  hits= 496  group= 6  zone=OUTSIDE   size=( 9.19, 0.81, 2.06)  npts=173
+  #10  dist=  86.5м  score=   12189  hits= 498  group= 7  zone=OUTSIDE   size=( 0.33, 0.36, 2.12)  npts=32
+  #11  dist=  94.0м  score=   12030  hits= 670  group= 7  zone=OUTSIDE   size=( 1.01, 0.34, 2.25)  npts=12
+  #12  dist=  41.1м  score=   11530  hits= 565  group= 6  zone=RAIL      size=( 2.29, 0.26, 0.99)  npts=29
+  #13  dist= 112.3м  score=   11168  hits= 485  group=10  zone=INSIDE    size=( 1.53, 0.43, 1.44)  npts=9
+  #14  dist=  76.2м  score=   10385  hits= 552  group= 6  zone=RAIL      size=( 1.50, 0.77, 0.69)  npts=22
+  #15  dist= 107.1м  score=    7145  hits= 459  group= 8  zone=OUTSIDE   size=( 0.95, 1.29, 0.02)  npts=6
+
+========================================================================
+  РАСПРЕДЕЛЕНИЕ ПО ДИСТАНЦИИ
+========================================================================
+    0- 20м:   3 (real: 1) ###
+   20- 50м:  16 (real: 9) ################
+   50-100м:  23 (real: 7) #######################
+  100-150м:  19 (real: 10) ###################
+  150-230м:  14 (real: 6) ##############
+
+  Всего уникальных: 75
+  Сильных (hits>300): 21
+  По зонам: {'INSIDE': 32, 'NEAR': 4, 'OUTSIDE': 23, 'RAIL': 14, 'ABOVE': 2}
+  Max dist: 199.8 м
+  Обработка: 503.0s (3.0 fps)

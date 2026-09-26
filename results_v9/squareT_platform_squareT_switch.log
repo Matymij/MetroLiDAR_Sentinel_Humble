@@ -1,0 +1,67 @@
+starting streaming processing of /tmp/for_hackathon/for_hackathon/squareT_platform_squareT_switch...
+processing (workers=4, streaming)...
+[0m[INFO] [1790291815.778628013] [rosbag2_storage]: Opened database '/tmp/for_hackathon/for_hackathon/squareT_platform_squareT_switch/squareT_platform_squareT_switch_0.db3' for READ_ONLY.[0m
+  [50 frames] raw=30 conf=20 fps=5.6 tracks=45
+  [100 frames] raw=18 conf=11 fps=7.1 tracks=63
+  [150 frames] raw=15 conf=8 fps=9.2 tracks=74
+  [200 frames] raw=22 conf=13 fps=10.4 tracks=93
+  [250 frames] raw=30 conf=24 fps=11.3 tracks=126
+  [300 frames] raw=25 conf=21 fps=11.2 tracks=137
+  [350 frames] raw=19 conf=18 fps=11.2 tracks=144
+  [400 frames] raw=21 conf=19 fps=11.0 tracks=148
+  [450 frames] raw=20 conf=18 fps=10.8 tracks=152
+  [500 frames] raw=20 conf=18 fps=10.9 tracks=155
+  [550 frames] raw=23 conf=21 fps=11.0 tracks=162
+  [600 frames] raw=20 conf=19 fps=11.0 tracks=166
+  [650 frames] raw=20 conf=18 fps=10.9 tracks=168
+  [700 frames] raw=25 conf=22 fps=11.0 tracks=179
+  [750 frames] raw=16 conf=10 fps=10.6 tracks=192
+  [800 frames] raw=23 conf=15 fps=10.6 tracks=206
+  [850 frames] raw=9 conf=7 fps=10.5 tracks=223
+
+processing done: 877 frames in 83.8s (10.5 fps)
+raw candidates: 19056
+rejects: {'too_big': 2874, 'few_points': 9210, 'shape': 3082, 'outside_far': 10060, 'too_small': 1976, 'inside_wide': 5425, 'near_wide': 299, 'rail_wide': 618, 'outside_wall': 11, 'above_thin': 2, 'above_too_high': 4}
+
+========================================================================
+  ФИЛЬТРАЦИЯ ТРЕКОВ
+========================================================================
+  До фильтрации: 225 треков
+  После hits-фильтра: 153
+  После отсева тонких рельс: 149
+  После размера>=0.15м: 149
+  После кластеризации по позиции: 52 уникальных объектов
+
+========================================================================
+  TOP-15 ОБЪЕКТОВ (по score = hits × log(npts) × group)
+========================================================================
+  # 1  dist=  35.6м  score=   38403  hits=1539  group= 9  zone=INSIDE    size=( 1.09, 1.83, 0.07)  npts=15
+  # 2  dist=  82.7м  score=   37452  hits=1045  group=11  zone=OUTSIDE   size=( 0.71, 1.41, 2.02)  npts=25
+  # 3  dist=  77.9м  score=   18383  hits=1140  group= 9  zone=OUTSIDE   size=( 0.27, 1.28, 0.86)  npts=5
+  # 4  dist=  95.3м  score=   12988  hits=1345  group= 6  zone=OUTSIDE   size=( 1.44, 0.34, 0.58)  npts=4
+  # 5  dist=  94.5м  score=   11485  hits= 892  group= 8  zone=NEAR      size=( 0.57, 0.22, 0.43)  npts=4
+  # 6  dist=  81.8м  score=    8083  hits= 531  group= 5  zone=OUTSIDE   size=( 3.20, 0.48, 2.23)  npts=20
+  # 7  dist= 109.4м  score=    7064  hits= 643  group= 5  zone=INSIDE    size=( 0.08, 1.53, 0.00)  npts=8
+  # 8  dist=  89.3м  score=    6993  hits= 518  group= 3  zone=INSIDE    size=( 1.85, 4.51, 1.17)  npts=89
+  # 9  dist=  25.7м  score=    4599  hits= 496  group= 3  zone=INSIDE    size=( 0.94, 2.30, 0.71)  npts=21
+  #10  dist= 167.8м  score=    4539  hits= 497  group= 3  zone=INSIDE    size=(13.26, 4.05, 1.08)  npts=20
+  #11  dist= 101.0м  score=    4236  hits= 658  group= 4  zone=INSIDE    size=( 0.11, 1.06, 0.00)  npts=4
+  #12  dist=  23.0м  score=    3975  hits= 681  group= 3  zone=RAIL      size=( 0.05, 0.06, 0.20)  npts=6
+  #13  dist=  77.8м  score=    3742  hits= 325  group= 5  zone=RAIL      size=( 0.36, 0.43, 0.31)  npts=9
+  #14  dist= 139.3м  score=    3682  hits= 565  group= 2  zone=INSIDE    size=( 7.61, 4.51, 1.20)  npts=25
+  #15  dist=  98.0м  score=    3174  hits= 493  group= 4  zone=NEAR      size=( 1.98, 0.05, 1.33)  npts=4
+
+========================================================================
+  РАСПРЕДЕЛЕНИЕ ПО ДИСТАНЦИИ
+========================================================================
+    0- 20м:   1 (real: 0) #
+   20- 50м:  10 (real: 3) ##########
+   50-100м:  16 (real: 9) ################
+  100-150м:  15 (real: 9) ###############
+  150-230м:  10 (real: 2) ##########
+
+  Всего уникальных: 52
+  Сильных (hits>300): 16
+  По зонам: {'INSIDE': 26, 'OUTSIDE': 10, 'NEAR': 5, 'RAIL': 11}
+  Max dist: 196.4 м
+  Обработка: 83.8s (10.5 fps)
