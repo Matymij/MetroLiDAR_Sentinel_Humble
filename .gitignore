@@ -35,3 +35,6 @@ _backup_*/
 !results_v9/*.csv
 !results_v8/*.log
 !results_v9/*.log
+
+# === Мусор от shell-команд ===
+=*
