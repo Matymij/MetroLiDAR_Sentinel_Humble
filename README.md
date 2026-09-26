@@ -72,3 +72,15 @@ Datasets
 Bags are not committed (7+ GB each). The report uses three sources:
 
 cloud_with_fake_obj — synthetic obstacles in the gauge (ground truth).
+- `for_hackathon` — 6 tunnel scenarios (doubleT, roundT, squareT, pressure gate, switch).
+- `new_data` — 11 271 frames from 215+ tunnel recordings.
+
+All results are in [`results_v9/`](results_v9/) as CSV + logs.
+
+## Documentation
+
+- [FINAL_REPORT.md](FINAL_REPORT.md) — full project report (RU)
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — pipeline diagram
+- [docs/ALGORITHM.md](docs/ALGORITHM.md) — detection algorithm
+- [docs/BENCHMARK.md](docs/BENCHMARK.md) — performance benchmarks
+- [README_RU.md](README_RU.md) — full Russian guide
