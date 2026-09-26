@@ -11,24 +11,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-ros2bag ros-humble-launch-ros \
     ros-humble-rmw-cyclonedds-cpp \
     && rm -rf /var/lib/apt/lists/*
-# NVIDIA CUDA runtime через pip (для cupy/cuML)
-RUN python3 -m pip install --no-cache-dir \
-    "open3d>=0.18,<0.20" \
-    "numpy<2" \
-    "psutil>=5.9" \
-    "scipy>=1.10" \
-    "zstandard>=0.22" \
-    "cupy-cuda12x>=13.0" \
-    "numba>=0.59" \
-    --extra-index-url https://pypi.nvidia.com
 
-# Основные библиотеки
+    
 RUN python3 -m pip install --no-cache-dir \
     "open3d>=0.18,<0.20" \
     "numpy<2" \
     "psutil>=5.9" \
     "scipy>=1.10" \
     "zstandard>=0.22" \
+    "numba>=0.59" \
     "cupy-cuda12x>=13.0" \
     --extra-index-url https://pypi.nvidia.com
 
