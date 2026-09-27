@@ -6,7 +6,7 @@
 
 Пайплайн обрабатывает данные 128-канального LiDAR (307 200 точек/кадр), установленного на 1075 мм над рельсом по центру состава, и детектирует **любые объекты**, попадающие в габарит метропоезда (±1.35 м по ширине, 0.20–3.40 м по высоте от рельса).
 
-**Производительность**: 36–55 fps (среднее 47 fps) — **4.7× real-time** для 10 Гц лидара.  
+**Производительность**: 100–156 fps (среднее ~120 fps) — **12× real-time** для 10 Гц лидара.  
 **Максимальная дистанция детекции**: **208.8 м** (наблюдаемый максимум; instrumented range Pandar128E3X — 230 м, гарантированная детекция 2×2 м — до 200 м).
 
 ## Возможности
@@ -56,7 +56,7 @@ docker exec sentinel_main bash -c '
 docker exec -it sentinel_main bash -c '
   source /opt/ros/humble/setup.bash
   source /ws/install/setup.bash
-  python3 -u /ws/scripts/offline_pipeline_FINAL.py /tmp/bag /tmp/out.csv 6
+  python3 -u /ws/scripts/offline_pipeline_v11_FINAL.py /tmp/bag /tmp/out.csv 6
 '
 
 # 8. Забрать результат
@@ -66,7 +66,7 @@ src/                          # ROS2 пакеты
 launch/                       # launch-файлы
 config/                       # params.yaml, fastdds.xml
 scripts/                      # Пайплайны
-  offline_pipeline_FINAL.py   # ⭐ Основной пайплайн
+  offline_pipeline_v11_FINAL.py   # ⭐ Основной пайплайн
   stream_zst_pipeline.py      # Потоковая .zst
   consolidate_csv.py          # Пост-фильтр
   diagnose.py                 # Диагностика bag
@@ -78,7 +78,7 @@ FINAL_REPORT.md               # Итоговый отчёт
 
 | Источник | Кадров | Объектов | Max dist |
 |---|---|---|---|
-| `cloud_with_fake_obj` | 1 510 | 65 | 190.5 м |
+| `cloud_with_fake_obj` | 1 510 | 70 | 190.5 м |
 | `new_data` | 11 271 | 3 625 | 205.4 м |
 | `for_hackathon` (6 bag'ов) | 2 488 | 190 | 208.8 м |
 | **ВСЕГО** | **15 269** | **3 880** | **208.8 м** |

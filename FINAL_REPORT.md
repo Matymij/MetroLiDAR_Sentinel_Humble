@@ -44,7 +44,7 @@ CSV со всеми объектами
 ### Общая сводка
 | Источник | Кадров | Объектов | Max dist |
 |---|---|---|---|
-| `cloud_with_fake_obj` | 1 510 | 65 | 190.5 м |
+| `cloud_with_fake_obj` | 1 510 | 70 | 190.5 м |
 | `new_data` | 11 271 | 3 625 | 205.4 м |
 | `for_hackathon` (6 bag'ов) | 2 488 | 190 | 208.8 м |
 | **ВСЕГО** | **15 269** | **3 880** | **208.8 м** |
@@ -78,8 +78,8 @@ CSV со всеми объектами
 - **BELOW** — под рельсом (шум/балласт — отсеивается)
 
 ## 8. Производительность
-- Скорость: **36–55 fps** (среднее ~47, 4.7× real-time для 10 Гц LiDAR)
-- CPU: 6 воркеров (ThreadPoolExecutor + numba nogil)
+- Скорость: **100–156 fps** (среднее ~120, 12× real-time для 10 Гц LiDAR)
+- CPU: 8 воркеров (ThreadPoolExecutor + numba nogil)
 - RAM: 300 МБ – 1 ГБ
 - Время на 11 271 кадр new_data: **10 минут**
 - Время на 1 510 кадров cloud_with_fake_obj: **26 секунд**
@@ -92,13 +92,13 @@ CSV со всеми объектами
 ## 10. Артефакты
 
 **Код:**
-- `scripts/offline_pipeline_FINAL.py` — основной пайплайн (v11, 36–55 fps)
+- `scripts/offline_pipeline_v11_FINAL.py` — основной пайплайн (v11, 100–156 fps)
 - `scripts/stream_zst_pipeline.py` — потоковая обработка `.zst`
 - `scripts/offline_pipeline.py` — v9 (для сравнения)
 - `src/` — ROS 2 пакеты (C++ preprocessor, Python detector, msgs)
 
 **Результаты (в репозитории):**
-- `results_v9/v11_FINAL.csv` — прогон на `cloud_with_fake_obj` (1 510 кадров, 65 объектов, 190.5 м)
+- `results_v9/v11_FINAL.csv` — прогон на `cloud_with_fake_obj` (1 510 кадров, 70 объектов, 190.5 м)
 - `results_v9/new_data_FINAL.csv` — прогон на `new_data` (11 271 кадр, 3 625 объектов, 205.4 м)
 - `results_v9/doubleT_obstacle.csv`, `doubleT_platform.csv`, `roundT_doubleT.csv`, `roundT_pressureGate_roundT.csv`, `roundT_squareT_pressureGate_squareT.csv`, `squareT_platform_squareT_switch.csv` — 6 bag'ов for_hackathon (2 488 кадров, 190 объектов, 208.8 м)
 - `results/final/final_ok.csv` — финальная сводка
@@ -108,3 +108,44 @@ CSV со всеми объектами
 - `README.md`, `README_RU.md` — инструкция запуска
 - `docs/ARCHITECTURE.md`, `docs/ALGORITHM.md`, `docs/BENCHMARK.md`
 - `FINAL_REPORT.md` — этот файл
+---
+
+## 11. Обновление от 28 сентября 2026
+
+### Основной pipeline: v11_FINAL
+
+**Файл:** `scripts/offline_pipeline_v11_FINAL.py`
+
+**Изменения относительно v6:**
+- Замена `rosbag2_py` на `rosbags` — работает без ROS2 и Docker
+- Voxel downsampling для near-слоя: 0.10 → 0.15
+- 8 воркеров вместо 4
+- Усиленный фильтр плоских артефактов на дальних дистанциях
+
+### Бенчмарк
+
+| Источник | v6 fps | v11 fps | Ускорение |
+|---|---|---|---|
+| cloud_with_fake_obj | 50 | 156 | 3.1× |
+| doubleT_obstacle | 30 | 56 | 1.9× |
+| doubleT_platform | 45 | 108 | 2.4× |
+| roundT_doubleT | 50 | 113 | 2.3× |
+| roundT_pressureGate_roundT | 45 | 97 | 2.2× |
+| roundT_squareT_pressureGate_squareT | 50 | 102 | 2.0× |
+| squareT_platform_squareT_switch | 50 | 104 | 2.1× |
+
+**Средний прирост: 2.3×. Точность сохранена (70 объектов).**
+
+### GPU — почему архив
+
+Проверена выгрузка DBSCAN на GPU (RAPIDS cuML, RTX 4070):
+
+| Метрика | CPU v11 | GPU cuML |
+|---|---|---|
+| Скорость | 128-156 fps | 44 fps |
+| Объектов | 70 | 68 |
+
+**Вывод:** GPU не подходит для кадров <50k точек/слой, overhead переноса не окупается.
+
+GPU-версия: `_archive/pipeline_versions/offline_pipeline_GPU.py`.
+

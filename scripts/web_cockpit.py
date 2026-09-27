@@ -14,8 +14,9 @@ from fastapi.staticfiles import StaticFiles
 from scipy.spatial import cKDTree
 import uvicorn
 
-sys.path.insert(0, "/ws/scripts")
-from offline_pipeline_FINAL import (
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+from offline_pipeline_v11_FINAL import (
     stream_frames, _process_frame_impl, rotate_roi_numba, CRITICAL_ZONES,
     Tracker,
 )
@@ -258,7 +259,15 @@ async def ws_ep(ws: WebSocket):
                 STATE["prev_pts"] = None
                 STATE["prev_ts"] = None
 
-                bag = msg.get("bag", "/bags/cloud_with_fake_obj")
+                bag = msg.get("bag", "bags/cloud_with_fake_obj")
+                # Нормализация путей: убираем docker-style /bags/ и /ws/
+                PROJECT_ROOT = Path(__file__).resolve().parent.parent
+                if bag.startswith("/bags/"):
+                    bag = str(PROJECT_ROOT / bag[1:])
+                elif bag.startswith("/ws/"):
+                    bag = str(PROJECT_ROOT / bag[4:])
+                elif not bag.startswith("/"):
+                    bag = str(PROJECT_ROOT / bag)
                 await ws.send_json({"event": "started", "bag": bag})
                 pipeline_task = asyncio.create_task(push_pipeline(ws, bag))
 
