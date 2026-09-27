@@ -22,6 +22,9 @@ RUN python3 -m pip install --no-cache-dir \
     "numba>=0.59" \
     "pybind11>=2.11" \
     "cupy-cuda12x>=13.0" \
+    "fastapi>=0.110" \
+    "uvicorn[standard]>=0.27" \
+    "websockets>=12" \
     --extra-index-url https://pypi.nvidia.com
 
 ENV LD_LIBRARY_PATH=/usr/local/lib/python3.10/dist-packages/nvidia/cuda_nvrtc/lib:/usr/local/lib/python3.10/dist-packages/nvidia/cuda_runtime/lib:/usr/local/lib/python3.10/dist-packages/nvidia/cublas/lib:/usr/local/lib/python3.10/dist-packages/nvidia/cufft/lib:/usr/local/lib/python3.10/dist-packages/nvidia/curand/lib:/usr/local/lib/python3.10/dist-packages/nvidia/cusolver/lib:/usr/local/lib/python3.10/dist-packages/nvidia/cusparse/lib:/usr/local/lib/python3.10/dist-packages/nvidia/nccl/lib
