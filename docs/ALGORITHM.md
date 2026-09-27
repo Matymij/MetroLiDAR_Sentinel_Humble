@@ -1,13 +1,87 @@
 # Algorithm notes
 
-1. Range/ROI filtering.
-2. Voxel downsampling.
-3. Statistical outlier removal.
-4. DBSCAN clustering.
-5. 3D bounding box intersection with configurable train envelope.
-6. Nearest-neighbour temporal association.
-7. Exponential velocity smoothing in LiDAR frame.
-8. Confidence and risk scoring.
-9. ROS 2 publication + RViz markers.
+## Последовательность обработки кадра
 
-The baseline intentionally avoids assuming a large labelled dataset. The official case notes that most recordings contain an empty tunnel and suggests anomaly, geometry and temporal approaches.
+### 1. Чтение PointCloud2
+Из ROS 2 bag'а (sqlite3) читается `sensor_msgs/msg/PointCloud2`. Первые 12 байт каждой точки — координаты x, y, z (float32). Универсально для 16B и 26B форматов.
+
+### 2. Поворот осей + ROI
+Numba-функция за один проход:
+- LiDAR смотрит в −Y → после rotate forward = +X
+- Боковая ось = X → после rotate lateral = Y
+- ROI: forward ∈ [0.3, 230], |lateral| ≤ 3.0, z ∈ [−0.3, 4.9]
+
+### 3. Три слоя по дистанции
+Чем дальше — тем крупнее voxel и eps (компенсация разрежения).
+
+| Слой | Forward | Voxel | DBSCAN eps | min_pts |
+|---|---|---|---|---|
+| near | 0.3–50 м | 0.10 м | 0.50 м | 3 |
+| mid | 50–120 м | 0.25 м | 1.20 м | 3 |
+| far | 120–230 м | 0.35 м | 4.00 м | 2 |
+
+### 4. Voxel downsampling
+Numba через хеш-упаковку координат в int64. ~10× быстрее `numpy.unique`.
+
+### 5. Grid DBSCAN
+Cell hashing: точки → ячейки eps; 27 соседей; union-find. O(n log n). 5–10× быстрее scipy `cKDTree`.
+
+### 6. Извлечение bbox
+Numba: min/max/npts для каждого кластера без копирования точек.
+
+### 7. Классификация зон
+| Зона | Условие | Приоритет |
+|---|---|---|
+| RAIL | abs(cz) < 0.30 | 🔴 критично |
+| BELOW | cz < −0.10 | ⚪ отсев |
+| ABOVE | cz > 3.40 | 🟠 свисает |
+| INSIDE | abs(cy) ≤ 1.35 и z ∈ [0.20, 3.40] | 🔴 критично |
+| NEAR | dy ≤ 0.30 | 🟠 близко |
+| OUTSIDE | dy > 0.30 | 🟡 сбоку |
+
+### 8. Дистанционно-адаптивные фильтры
+| Дистанция | min_npts | Форма | outside_far |
+|---|---|---|---|
+| < 5 м | 3 | куб/плита | 0.5 м |
+| 5–20 м | 4 | куб/плита | 0.5 м |
+| 20–80 м | 5 | куб/плита | 0.5 м |
+| 80–120 м | 4 | любая | 1.5 м |
+| 120–170 м | 3 | любая | 1.5 м |
+| > 170 м | 2 | любая | 1.5 м |
+
+Shape-фильтр: либо куб (aspect < 6), либо длинная тонкая плита (max > 0.8 м и min < 0.15 × max).
+
+### 9. Temporal tracking
+- Association: 3D-позиция, euclidean < 6 м
+- Confirm: hits ≥ 15
+- Timeout: 8 кадров
+- Публикуются только confirmed
+
+### 10. Пост-фильтр
+1. `min_hits_for(dist)`: 50 / 30 / 15 / 8
+2. Отсев тонких RAIL (`sy < 0.20` и `sz < 0.20`)
+3. Минимальный размер 0.15 м
+4. Слияние треков ±3 м
+5. Ранжирование по score
+
+## Speed estimation (ICP)
+
+`web_cockpit.py` использует **point-to-point ICP** между кадрами:
+1. Subsample 1500 точек из ROI [5, 150] м
+2. 3 итерации `cKDTree.query` + weighted translation
+3. Смещение / dt × 3.6 = мгновенная скорость (км/ч)
+4. EMA-сглаживание (α=0.25)
+5. Deadband: < 4 км/ч → 0
+
+**Зачем:** в `cloud_with_fake_obj` нет `/odom`, `/imu` — только `/lidar_points`. ICP — единственный способ оценить ego-motion.
+
+## Физические ограничения Pandar128E3X
+
+| Размер объекта | Max detect |
+|---|---|
+| 0.3×0.3 м | ~60 м |
+| 0.5×0.5 м | ~110 м |
+| 1×1 м | ~160 м |
+| 2×2 м | 190 м ✅ |
+
+**Дальше 230 м** — за пределами instrumented range.
