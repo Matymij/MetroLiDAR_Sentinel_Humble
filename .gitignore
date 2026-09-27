@@ -43,3 +43,6 @@ _archive/
 # Misc
 *.so
 =*
+
+# Backups
+*.bak

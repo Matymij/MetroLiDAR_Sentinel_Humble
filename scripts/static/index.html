@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>SUBWAY AI COCKPIT</title>
+<link rel="stylesheet" href="/static/style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<canvas id="scene"></canvas>
+
+<div class="panel cup">
+  <div class="panel-title">ЦЕНТР УПРАВЛЕНИЯ (ЦУП) — СИТУАЦИОННЫЙ ЭКРАН</div>
+  <div class="cup-preview">
+    <div class="cup-mini">
+      <div class="cup-canvas-box"></div>
+    </div>
+    <div class="cup-mini-info">
+      <div class="row"><span class="label">СВЯЗЬ:</span><span id="link" class="val warn">offline</span></div>
+      <div class="row"><span class="label">СТАТУС ПУТИ:</span><span id="path-status" class="val ok">—</span></div>
+      <div class="row"><span class="label">ОБЪЕКТОВ:</span><span id="n-anchors" class="val">0</span></div>
+      <div class="row"><span class="label">КРИТИЧНЫХ:</span><span id="n-critical" class="val">0</span></div>
+      <div class="row"><span class="label">ТОРМОЗ:</span><span id="emergency" class="brake-dot"></span></div>
+    </div>
+  </div>
+  <div class="cup-sliders">
+    <div class="slider-row">
+      <label>TARGET POINTS <b id="val-points">10000</b></label>
+      <input id="sl-points" type="range" min="1000" max="50000" step="1000" value="10000">
+    </div>
+    <div class="slider-row">
+      <label>SAFE DISTANCE Z <b id="val-safe">100м</b></label>
+      <input id="sl-safe" type="range" min="50" max="200" step="10" value="100">
+    </div>
+    <div class="slider-row">
+      <label>MAX VISION RANGE <b id="val-range">230м</b></label>
+      <input id="sl-range" type="range" min="50" max="230" step="10" value="230">
+    </div>
+    <div class="slider-row">
+      <label>GAUGE WIDTH X <b id="val-width">2.7м</b></label>
+      <input id="sl-width" type="range" min="1" max="6" step="0.1" value="2.7">
+    </div>
+    <div class="slider-row">
+      <label>SCANNER MAX Y <b id="val-height">3.4м</b></label>
+      <input id="sl-height" type="range" min="1" max="8" step="0.1" value="3.4">
+    </div>
+  </div>
+  <div class="cup-composition">
+    <div class="cup-row">
+      <span class="cup-id">СОСТАВ М01</span>
+      <span class="cup-line">Тоннель / Габаритный контроль</span>
+      <span class="cup-speed">— км/ч</span>
+      <span id="status-m01" class="cup-status ok">НОРМА</span>
+    </div>
+  </div>
+</div>
+
+<div class="panel top-right">
+  <button id="btn-start" class="btn">▶ ЗАПУСК СИСТЕМЫ</button>
+  <button id="btn-pause" class="btn" disabled>II ПАУЗА</button>
+  <div class="panel-title mt">БОРТОВАЯ ТЕЛЕМЕТРИЯ ДОС</div>
+  <div class="row"><span class="label">СКОРОСТЬ:</span><span id="speed" class="val">0.0 км/ч</span></div>
+  <div class="row"><span class="label">ПУТЬ:</span><span id="dist" class="val">0.0 м</span></div>
+  <div class="row"><span class="label">МИН. ДИСТ.:</span><span id="min-dist" class="val ok">ЧИСТО</span></div>
+  <div class="row"><span class="label">МАКС. ДИСТ.:</span><span id="max-dist" class="val">—</span></div>
+  <div class="row"><span class="label">ДО ПРЕГРАДЫ:</span><span id="to-obs" class="val ok">ЧИСТО</span></div>
+  <div class="row"><span class="label">TTC:</span><span id="ttc" class="val">—</span></div>
+</div>
+
+<div class="panel bottom-left">
+  <div class="panel-title">БОРТОВОЙ ЖУРНАЛ ADAS</div>
+  <div id="log" class="log"></div>
+</div>
+
+<div id="fps" class="fps-counter">fps —</div>
+<div id="frame-counter" class="frame-counter">frame 0</div>
+
+<script type="module" src="/static/cockpit.js"></script>
+</body>
+</html>
