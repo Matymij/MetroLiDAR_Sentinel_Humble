@@ -28,12 +28,13 @@ STATE = {
     "running": False, "paused": False, "frame": 0,
     "distance_m": 0.0, "speed_kmh": 0.0, "speed_ema": 0.0,
     "prev_pts": None, "prev_ts": None,
+    "t_start": 0.0,
 }
 
 MAX_PTS = 10000
-ICP_N = 1500
-ICP_MIN_RANGE = 5.0
-ICP_MAX_RANGE = 150.0
+ICP_N = 3000
+ICP_MIN_RANGE = 3.0
+ICP_MAX_RANGE = 60.0
 
 
 def subsample_arr(roi, n_max=MAX_PTS):
@@ -66,7 +67,7 @@ def extract_rail_curve(roi, n_bands=20, max_range=220.0):
         pts.append((float(xs[m].mean()), float(ys[m].mean()), 0.0))
     return pts
 
-def icp_translation(prev_pts, curr_pts, n=ICP_N, iters=3):
+def icp_translation(prev_pts, curr_pts, n=ICP_N, iters=8):
     """Estimate translation of the vehicle between two frames (translation-only ICP).
     Returns (dx, dy, dz) in the LiDAR frame (vehicle moves forward = +X)."""
     if prev_pts is None or curr_pts is None:
@@ -178,9 +179,9 @@ async def push_pipeline(ws: WebSocket, bag_dir: str):
                     abs(inst_speed - STATE["speed_ema"]) > 60):
                 inst_speed = STATE["speed_ema"]
 
-            alpha = 0.25
+            alpha = 0.10
             STATE["speed_ema"] = (1 - alpha) * STATE["speed_ema"] + alpha * inst_speed
-            if STATE["speed_ema"] < 4.0:
+            if STATE["speed_ema"] < 0.2:
                 STATE["speed_ema"] = 0.0
 
         STATE["prev_pts"] = sub
@@ -222,11 +223,40 @@ async def push_pipeline(ws: WebSocket, bag_dir: str):
                 "status": st,
             },
         }
+        if idx % 100 == 0:
+            try:
+                import time as _t
+                elapsed = _t.time() - STATE["t_start"] if STATE["t_start"] else 0.0
+                fps_now = (idx / elapsed) if elapsed > 0 else 0.0
+                n_tracks = len(tracker.tracks)
+                print(
+                    f"  [{idx:5d} frames] raw={len(dets):3d} conf={len(dets):3d} "
+                    f"fps={fps_now:6.1f} tracks={n_tracks:4d} "
+                    f"spd={STATE['speed_kmh']:5.2f} km/h "
+                    f"dist={STATE['distance_m']:6.1f} m",
+                    flush=True,
+                )
+            except Exception as e:
+                print(f"[log err] {e}", flush=True)
+
         try:
             await ws.send_json(payload)
         except Exception:
             break
         await asyncio.sleep(0.03)
+
+    try:
+        import time as _t
+        elapsed = _t.time() - STATE["t_start"] if STATE["t_start"] else 0.0
+        fps_final = (STATE["frame"] / elapsed) if elapsed > 0 else 0.0
+        print()
+        print(f"processing done: {STATE['frame']} frames in {elapsed:.1f}s "
+              f"({fps_final:.1f} fps)", flush=True)
+        print(f"tracks active: {len(tracker.tracks)}", flush=True)
+        print(f"speed final: {STATE['speed_kmh']:.2f} km/h", flush=True)
+        print(f"path final: {STATE['distance_m']:.1f} m", flush=True)
+    except Exception as e:
+        print(f"[final log err] {e}", flush=True)
 
 
 @app.get("/")
@@ -258,6 +288,8 @@ async def ws_ep(ws: WebSocket):
                 STATE["speed_ema"] = 0.0
                 STATE["prev_pts"] = None
                 STATE["prev_ts"] = None
+                import time as _t
+                STATE["t_start"] = _t.time()
 
                 bag = msg.get("bag", "bags/cloud_with_fake_obj")
                 # Нормализация путей: убираем docker-style /bags/ и /ws/
