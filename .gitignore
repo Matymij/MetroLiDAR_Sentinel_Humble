@@ -1,6 +1,3 @@
-cd "/c/VSC/Проект №5/MetroLiDAR_Sentinel_Humble"
-
-cat > .gitignore << 'GITIGNORE_EOF'
 # Datasets
 bags/
 data/
@@ -11,10 +8,11 @@ data/
 *.tar
 *.tar.zst
 
-# Python
+# Python venvs
 .venv/
 .venv_gpu/
 venv/
+env/
 __pycache__/
 *.pyc
 *.pyo
@@ -38,24 +36,22 @@ Thumbs.db
 _backup_*/
 *.bak
 
+# Local WSL helpers
+activate_gpu.sh
+
 # Misc
 *.so
 =*
 
-# CSV: block everything by default
+# CSV: block intermediate by default
 *.csv
 
 # ...but allow reference results for review
 !results_v9/*.csv
 !results_v9/*.log
 !results/final/*.csv
+!results_v11/*.csv
 !results_v11_8w/*.csv
 !results_v11_8w/*.log
-!results_v11/*.csv
 
-# _archive/ — история версий, нужна экспертам
-# (по умолчанию НЕ игнорируется, оставлено для прозрачности)
-GITIGNORE_EOF
-
-echo "=== .gitignore пересоздан ==="
-cat .gitignore
+# _archive/ is intentionally tracked (pipeline history for reviewers)
