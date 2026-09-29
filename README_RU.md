@@ -8,7 +8,7 @@
 
 **Обработано кадров**: 3 998 (1510 + 2488)  
 **Уникальных объектов**: 86 DANGEROUS  
-**Производительность**: 63–86 fps (Windows) / 156 fps (Linux) — **~6–16× real-time**  
+**Производительность**: 86 fps (Windows, 8 потоков) / 164 fps (WSL2/Linux, 16 потоков) — **~8–16× real-time**  
 **Максимальная дистанция детекции**: **188.2 м** (TOP-12 confirmed; raw tracker max 203.7 м; sensor limit Pandar128E3X — 208 м).  
 **Зоны габарита**: 6 (`INSIDE`, `NEAR`, `RAIL`, `ABOVE`, `OUTSIDE`, `BELOW`)
 
