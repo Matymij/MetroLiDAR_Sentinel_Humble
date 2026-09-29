@@ -1,64 +1,64 @@
 starting streaming processing of bags/for_hackathon/squareT_platform_squareT_switch...
   warmup done
   [100 frames] raw=11 conf=7 fps=7.1 tracks=49
-  [200 frames] raw=16 conf=9 fps=14.1 tracks=78
-  [300 frames] raw=11 conf=8 fps=21.2 tracks=110
-  [400 frames] raw=13 conf=11 fps=28.3 tracks=124
-  [500 frames] raw=10 conf=9 fps=35.3 tracks=131
-  [600 frames] raw=13 conf=12 fps=42.4 tracks=146
-  [700 frames] raw=12 conf=9 fps=49.4 tracks=159
-  [800 frames] raw=26 conf=13 fps=56.4 tracks=183
+  [200 frames] raw=16 conf=9 fps=14.3 tracks=78
+  [300 frames] raw=11 conf=8 fps=21.4 tracks=110
+  [400 frames] raw=13 conf=11 fps=28.5 tracks=124
+  [500 frames] raw=10 conf=9 fps=35.6 tracks=131
+  [600 frames] raw=13 conf=12 fps=42.7 tracks=146
+  [700 frames] raw=12 conf=9 fps=49.8 tracks=159
+  [800 frames] raw=26 conf=13 fps=56.8 tracks=183
 
-processing done: 877 frames in 14.2s (61.8 fps)
+processing done: 877 frames in 14.1s (62.3 fps)
 raw candidates: 11605
 rejects: {'plaus_too_thin': 4517, 'few_points': 8884, 'plaus_lateral_wall': 2690, 'too_small': 1648, 'shape': 3172, 'too_big': 2402, 'outside_far': 9893, 'inside_wide': 5450, 'near_wide': 309, 'plaus_too_flat': 636, 'plaus_ghost_far': 28, 'plaus_horizontal_slab': 56, 'outside_wall': 13, 'above_thin': 2, 'plaus_floor_noise': 185, 'rail_wide': 590}
 
 ========================================================================
-  ФИЛЬТРАЦИЯ ТРЕКОВ
+  TRACK FILTERING
 ========================================================================
-  До фильтрации: 206 треков
-  Пути: {'STRAIGHT': 842, 'GENTLE_TURN': 35}
-  Медианный filter_scale: 1.00
-  После confidence>=0.05: 180 (было 206)
-  После hits-фильтра (scale=1.00): 79
-  После отсева тонких рельс: 79
-  После размера>=0.15м: 79
-  После кластеризации: 33 уникальных объектов
-  После zone cap: 33 (было 33)
+  Before filter: 206 tracks
+  Path: {'STRAIGHT': 842, 'GENTLE_TURN': 35}
+  Median filter_scale: 1.00
+  After confidence>=0.05: 180 (was 206)
+  After hits-filter (scale=1.00): 79
+  After thin-rail reject: 79
+  After size>=0.15m: 79
+  After clustering: 33 unique objects
+  After zone cap: 33 (was 33)
   Force-included FAR watch at 170.5m
-  DANGEROUS всего: 13  по дистанциям: {'0-50': 1, '50-100': 6, '100-150': 6, '150-200': 0, '200-500': 0}
-  WATCHLIST всего: 20  по дистанциям: {'0-50': 3, '50-100': 9, '100-150': 4, '150-200': 4, '200-500': 0}
-  DANGEROUS selected: 12 (было 13)
-  WATCHLIST selected: 6 (было 20)
+  DANGEROUS total: 13  by distance: {'0-50': 1, '50-100': 6, '100-150': 6, '150-200': 0, '200-500': 0}
+  WATCHLIST total: 20  by distance: {'0-50': 3, '50-100': 9, '100-150': 4, '150-200': 4, '200-500': 0}
+  DANGEROUS selected: 12 (was 13)
+  WATCHLIST selected: 6 (was 20)
 
 ========================================================================
-  TOP-15 ОБЪЕКТОВ
+  TOP-15 OBJECTS
 ========================================================================
-  # 1  dist=  25.2м  score=    3504  hits= 282  group= 5  zone=INSIDE    gauge=full             size=( 0.76, 1.07, 0.08)  npts=11
-  # 2  dist=  83.6м  score=    7040  hits= 356  group= 6  zone=INSIDE    gauge=partial_bottom   size=( 0.61, 3.67, 2.41)  npts=26
-  # 3  dist=  92.2м  score=    4344  hits= 290  group= 5  zone=INSIDE    gauge=partial_side     size=( 2.48, 3.84, 1.44)  npts=19
-  # 4  dist= 110.2м  score=      43  hits=  22  group= 1  zone=RAIL      gauge=rail_contact     size=( 1.37, 0.83, 0.17)  npts=6
-  # 5  dist= 121.6м  score=    1996  hits= 480  group= 3  zone=OUTSIDE   gauge=partial_side     size=( 2.62, 1.97, 0.46)  npts=3
-  # 6  dist=  75.1м  score=    4072  hits= 566  group= 3  zone=OUTSIDE   gauge=partial_side     size=( 2.62, 1.18, 0.69)  npts=10
-  # 7  dist=  60.6м  score=     123  hits=  59  group= 1  zone=INSIDE    gauge=rail_contact     size=( 0.42, 0.07, 1.33)  npts=7
-  # 8  dist=  80.3м  score=     528  hits=  82  group= 2  zone=OUTSIDE   gauge=partial_bottom   size=( 1.33, 1.84, 2.68)  npts=24
-  # 9  dist= 107.3м  score=     929  hits=  95  group= 3  zone=INSIDE    gauge=partial_bottom   size=( 2.83, 4.14, 1.73)  npts=25
-  #10  dist= 137.3м  score=    1257  hits= 401  group= 1  zone=INSIDE    gauge=partial_side     size=( 3.87, 4.30, 0.92)  npts=22
-  #11  dist=  88.4м  score=     165  hits=  55  group= 1  zone=INSIDE    gauge=partial_bottom   size=( 4.31, 1.70, 1.23)  npts=19
-  #12  dist= 118.4м  score=     197  hits=  55  group= 2  zone=OUTSIDE   gauge=partial_side     size=( 0.20, 1.45, 0.74)  npts=5
+  # 1  dist=  25.2Рј  score=    3504  hits= 282  group= 5  zone=INSIDE    gauge=full             size=( 0.76, 1.07, 0.08)  npts=11
+  # 2  dist=  83.6Рј  score=    7040  hits= 356  group= 6  zone=INSIDE    gauge=partial_bottom   size=( 0.61, 3.67, 2.41)  npts=26
+  # 3  dist=  92.2Рј  score=    4344  hits= 290  group= 5  zone=INSIDE    gauge=partial_side     size=( 2.48, 3.84, 1.44)  npts=19
+  # 4  dist= 110.2Рј  score=      43  hits=  22  group= 1  zone=RAIL      gauge=rail_contact     size=( 1.37, 0.83, 0.17)  npts=6
+  # 5  dist= 121.6Рј  score=    1996  hits= 480  group= 3  zone=OUTSIDE   gauge=partial_side     size=( 2.62, 1.97, 0.46)  npts=3
+  # 6  dist=  75.1Рј  score=    4072  hits= 566  group= 3  zone=OUTSIDE   gauge=partial_side     size=( 2.62, 1.18, 0.69)  npts=10
+  # 7  dist=  60.6Рј  score=     123  hits=  59  group= 1  zone=INSIDE    gauge=rail_contact     size=( 0.42, 0.07, 1.33)  npts=7
+  # 8  dist=  80.3Рј  score=     528  hits=  82  group= 2  zone=OUTSIDE   gauge=partial_bottom   size=( 1.33, 1.84, 2.68)  npts=24
+  # 9  dist= 107.3Рј  score=     929  hits=  95  group= 3  zone=INSIDE    gauge=partial_bottom   size=( 2.83, 4.14, 1.73)  npts=25
+  #10  dist= 137.3Рј  score=    1257  hits= 401  group= 1  zone=INSIDE    gauge=partial_side     size=( 3.87, 4.30, 0.92)  npts=22
+  #11  dist=  88.4Рј  score=     165  hits=  55  group= 1  zone=INSIDE    gauge=partial_bottom   size=( 4.31, 1.70, 1.23)  npts=19
+  #12  dist= 118.4Рј  score=     197  hits=  55  group= 2  zone=OUTSIDE   gauge=partial_side     size=( 0.20, 1.45, 0.74)  npts=5
 
 ========================================================================
-  WATCHLIST (вне габарита, менее критичные)
+  WATCHLIST (outside gauge, lower priority)
 ========================================================================
-  # 1  dist=  25.9м  conf=0.558  zone=RAIL      size=( 0.27, 0.21, 0.12)  npts=8
-  # 2  dist=   2.5м  conf=0.485  zone=RAIL      size=( 0.17, 0.24, 0.26)  npts=10
-  # 3  dist=  67.8м  conf=0.584  zone=RAIL      size=( 1.56, 0.44, 1.05)  npts=10
-  # 4  dist=  78.0м  conf=0.493  zone=RAIL      size=( 2.84, 0.31, 0.86)  npts=9
-  # 5  dist= 148.4м  conf=0.271  zone=RAIL      size=( 0.05, 0.26, 0.22)  npts=3
-  # 6  dist= 170.5м  conf=0.128  zone=INSIDE    size=( 2.20, 4.21, 0.84)  npts=12
+  # 1  dist=  25.9Рј  conf=0.558  zone=RAIL      size=( 0.27, 0.21, 0.12)  npts=8
+  # 2  dist=   2.5Рј  conf=0.485  zone=RAIL      size=( 0.17, 0.24, 0.26)  npts=10
+  # 3  dist=  67.8Рј  conf=0.584  zone=RAIL      size=( 1.56, 0.44, 1.05)  npts=10
+  # 4  dist=  78.0Рј  conf=0.493  zone=RAIL      size=( 2.84, 0.31, 0.86)  npts=9
+  # 5  dist= 148.4Рј  conf=0.271  zone=RAIL      size=( 0.05, 0.26, 0.22)  npts=3
+  # 6  dist= 170.5Рј  conf=0.128  zone=INSIDE    size=( 2.20, 4.21, 0.84)  npts=12
 
-  Всего уникальных: 12
-  Сильных (hits>300): 4
-  По зонам: {'INSIDE': 7, 'RAIL': 1, 'OUTSIDE': 4}
-  Max dist: 137.3 м
-  Обработка: 14.2s (61.8 fps)
+  Total unique: 12
+  Strong (hits>300): 4
+  By zone: {'INSIDE': 7, 'RAIL': 1, 'OUTSIDE': 4}
+  Max dist: 137.3 Рј
+  Processing: 14.1s (62.3 fps)

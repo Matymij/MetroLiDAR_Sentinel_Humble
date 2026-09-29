@@ -1,45 +1,45 @@
 starting streaming processing of bags/disk_copy/cloud_with_fake_obj...
   warmup done
-  [100 frames] raw=7 conf=4 fps=6.0 tracks=33
-  [200 frames] raw=5 conf=3 fps=12.0 tracks=61
-  [300 frames] raw=5 conf=3 fps=18.0 tracks=71
-  [400 frames] raw=19 conf=8 fps=24.0 tracks=92
-  [500 frames] raw=17 conf=9 fps=29.9 tracks=122
-  [600 frames] raw=16 conf=11 fps=35.9 tracks=158
-  [700 frames] raw=15 conf=12 fps=41.9 tracks=200
-  [800 frames] raw=12 conf=4 fps=47.8 tracks=232
-  [900 frames] raw=2 conf=0 fps=53.8 tracks=246
-  [1000 frames] raw=5 conf=2 fps=59.7 tracks=253
-  [1100 frames] raw=3 conf=3 fps=65.7 tracks=259
-  [1200 frames] raw=22 conf=16 fps=71.6 tracks=301
-  [1300 frames] raw=13 conf=6 fps=77.6 tracks=336
-  [1400 frames] raw=15 conf=9 fps=83.5 tracks=370
-  [1500 frames] raw=13 conf=11 fps=89.4 tracks=408
+  [100 frames] raw=7 conf=4 fps=5.8 tracks=33
+  [200 frames] raw=5 conf=3 fps=11.6 tracks=61
+  [300 frames] raw=5 conf=3 fps=17.3 tracks=71
+  [400 frames] raw=19 conf=8 fps=23.1 tracks=92
+  [500 frames] raw=17 conf=9 fps=28.9 tracks=122
+  [600 frames] raw=16 conf=11 fps=34.6 tracks=158
+  [700 frames] raw=15 conf=12 fps=40.3 tracks=200
+  [800 frames] raw=12 conf=4 fps=46.1 tracks=232
+  [900 frames] raw=2 conf=0 fps=51.8 tracks=246
+  [1000 frames] raw=5 conf=2 fps=57.6 tracks=253
+  [1100 frames] raw=3 conf=3 fps=63.3 tracks=259
+  [1200 frames] raw=22 conf=16 fps=69.1 tracks=301
+  [1300 frames] raw=13 conf=6 fps=74.8 tracks=336
+  [1400 frames] raw=15 conf=9 fps=80.5 tracks=370
+  [1500 frames] raw=13 conf=11 fps=86.2 tracks=408
 
-processing done: 1510 frames in 16.8s (90.0 fps)
+processing done: 1510 frames in 17.4s (86.8 fps)
 raw candidates: 17690
 rejects: {'few_points': 14104, 'outside_far': 12068, 'too_small': 2362, 'shape': 2119, 'inside_wide': 4667, 'plaus_lateral_wall': 2566, 'too_big': 3004, 'plaus_too_flat': 810, 'plaus_too_thin': 3710, 'rail_wide': 319, 'near_wide': 903, 'plaus_horizontal_slab': 459, 'plaus_floor_noise': 141, 'plaus_hanging_cable': 9, 'outside_wall': 283, 'above_thin': 154, 'plaus_ghost_far': 36, 'above_too_high': 70, 'plaus_ceiling': 7, 'above_wide': 15, 'inside_tall': 30}
 
 ========================================================================
-  ФИЛЬТРАЦИЯ ТРЕКОВ
+  TRACK FILTERING
 ========================================================================
-  До фильтрации: 409 треков
-  Пути: {'STRAIGHT': 1226, 'GENTLE_TURN': 278, 'SHARP_TURN': 6}
-  Медианный filter_scale: 1.00
-  После confidence>=0.05: 366 (было 409)
-  После hits-фильтра (scale=1.00): 182
-  После отсева тонких рельс: 181
-  После размера>=0.15м: 181
-  После кластеризации: 48 уникальных объектов
-  После zone cap: 48 (было 48)
+  Before filter: 409 tracks
+  Path: {'STRAIGHT': 1226, 'GENTLE_TURN': 278, 'SHARP_TURN': 6}
+  Median filter_scale: 1.00
+  After confidence>=0.05: 366 (was 409)
+  After hits-filter (scale=1.00): 182
+  After thin-rail reject: 181
+  After size>=0.15m: 181
+  After clustering: 48 unique objects
+  After zone cap: 48 (was 48)
   Force-included FAR watch at 153.6m
-  DANGEROUS всего: 26  по дистанциям: {'0-50': 8, '50-100': 7, '100-150': 7, '150-200': 4, '200-500': 0}
-  WATCHLIST всего: 22  по дистанциям: {'0-50': 7, '50-100': 6, '100-150': 6, '150-200': 3, '200-500': 0}
-  DANGEROUS selected: 12 (было 26)
-  WATCHLIST selected: 6 (было 22)
+  DANGEROUS total: 26  by distance: {'0-50': 8, '50-100': 7, '100-150': 7, '150-200': 4, '200-500': 0}
+  WATCHLIST total: 22  by distance: {'0-50': 7, '50-100': 6, '100-150': 6, '150-200': 3, '200-500': 0}
+  DANGEROUS selected: 12 (was 26)
+  WATCHLIST selected: 6 (was 22)
 
 ========================================================================
-  TOP-15 ОБЪЕКТОВ
+  TOP-15 OBJECTS
 ========================================================================
   # 1  dist=  26.4м  score=   72708  hits=1463  group=20  zone=INSIDE    gauge=full             size=( 0.67, 1.03, 0.08)  npts=11
   # 2  dist=  33.4м  score=    2828  hits= 307  group= 4  zone=INSIDE    gauge=partial_side     size=( 0.31, 1.10, 0.60)  npts=9
@@ -55,7 +55,7 @@ rejects: {'few_points': 14104, 'outside_far': 12068, 'too_small': 2362, 'shape':
   #12  dist=  98.4м  score=     842  hits= 113  group= 3  zone=INSIDE    gauge=rail_contact     size=( 2.10, 0.53, 2.33)  npts=11
 
 ========================================================================
-  WATCHLIST (вне габарита, менее критичные)
+  WATCHLIST (outside gauge, lower priority)
 ========================================================================
   # 1  dist=  21.9м  conf=0.720  zone=RAIL      size=( 1.34, 0.30, 0.45)  npts=7
   # 2  dist=  30.0м  conf=0.712  zone=RAIL      size=( 1.19, 0.14, 0.33)  npts=7
@@ -64,8 +64,8 @@ rejects: {'few_points': 14104, 'outside_far': 12068, 'too_small': 2362, 'shape':
   # 5  dist= 117.5м  conf=0.351  zone=RAIL      size=( 1.10, 0.63, 0.75)  npts=7
   # 6  dist= 153.6м  conf=0.272  zone=RAIL      size=( 0.06, 0.27, 0.23)  npts=3
 
-  Всего уникальных: 12
-  Сильных (hits>300): 5
-  По зонам: {'INSIDE': 11, 'NEAR': 1}
+  Total unique: 12
+  Strong (hits>300): 5
+  By zone: {'INSIDE': 11, 'NEAR': 1}
   Max dist: 188.2 м
-  Обработка: 16.8s (90.0 fps)
+  Processing: 17.4s (86.8 fps)

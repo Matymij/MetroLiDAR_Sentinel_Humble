@@ -848,13 +848,13 @@ def main(bag_dir, out_csv, n_workers=4):
     print(f"rejects: {dict(total_reject)}", flush=True)
 
     # === Пост-фильтр треков ===
-    print(f"\n{'='*72}\n  ФИЛЬТРАЦИЯ ТРЕКОВ\n{'='*72}")
-    print(f"  До фильтрации: {len(all_tracks)} треков")
+    print(f"\n{'='*72}\n  TRACK FILTERING\n{'='*72}")
+    print(f"  Before filter: {len(all_tracks)} tracks")
 
     # ==== Module 3: confidence + Module 1: filter_scale ====
     median_scale = float(np.median(filter_scales)) if filter_scales else 1.0
-    print(f"  Пути: {dict(path_classes)}")
-    print(f"  Медианный filter_scale: {median_scale:.2f}")
+    print(f"  Path: {dict(path_classes)}")
+    print(f"  Median filter_scale: {median_scale:.2f}")
 
     for t in all_tracks.values():
         t["confidence"] = compute_confidence(
@@ -874,14 +874,14 @@ def main(bag_dir, out_csv, n_workers=4):
     pre_cut = len(all_tracks)
     all_tracks = {tid: t for tid, t in all_tracks.items()
                   if t["confidence"] >= CONFIDENCE_MIN}
-    print(f"  После confidence>={CONFIDENCE_MIN}: {len(all_tracks)} (было {pre_cut})")
+    print(f"  After confidence>={CONFIDENCE_MIN}: {len(all_tracks)} (was {pre_cut})")
 
     filtered = [t for t in all_tracks.values() if t["hits"] >= min_hits_for(t)]
-    print(f"  После hits-фильтра (scale={median_scale:.2f}): {len(filtered)}")
+    print(f"  After hits-filter (scale={median_scale:.2f}): {len(filtered)}")
 
     filtered = [t for t in filtered
                 if t["zone"] != "RAIL" or (t["sy"] >= 0.20 or t["sz"] >= 0.20)]
-    print(f"  После отсева тонких рельс: {len(filtered)}")
+    print(f"  After thin-rail reject: {len(filtered)}")
 
         # Фильтр 3: минимальный размер + отсев плоских артефактов на дальних
     def _ok_size(t):
@@ -894,7 +894,7 @@ def main(bag_dir, out_csv, n_workers=4):
             return False
         return True
     filtered = [t for t in filtered if _ok_size(t)]
-    print(f"  После размера>=0.15м: {len(filtered)}")
+    print(f"  After size>=0.15m: {len(filtered)}")
 
     # Кластеризация треков
     clusters = []
@@ -918,7 +918,7 @@ def main(bag_dir, out_csv, n_workers=4):
         clusters.append({**best, "total_hits": total_hits,
                          "n_tracks": len(group)})
 
-    print(f"  После кластеризации: {len(clusters)} уникальных объектов")
+    print(f"  After clustering: {len(clusters)} unique objects")
 
     for c in clusters:
         c["score"] = c["total_hits"] * np.log1p(c["npts"]) * c["n_tracks"]
@@ -938,7 +938,7 @@ def main(bag_dir, out_csv, n_workers=4):
         if zone_counts.get(z, 0) < cap:
             capped.append(c)
             zone_counts[z] = zone_counts.get(z, 0) + 1
-    print(f"  После zone cap: {len(capped)} (было {len(clusters)})")
+    print(f"  After zone cap: {len(capped)} (was {len(clusters)})")
     clusters = capped
 
     # ==== Split into DANGEROUS (in-gauge) and WATCHLIST (outside) ====
@@ -1009,16 +1009,16 @@ def main(bag_dir, out_csv, n_workers=4):
         return {f"{lo}-{hi}": sum(1 for c in items if lo <= c["dist"] < hi)
                 for lo, hi in bins}
 
-    print(f"  DANGEROUS всего: {len(danger)}  по дистанциям: {_dist_hist(danger)}")
-    print(f"  WATCHLIST всего: {len(watch)}  по дистанциям: {_dist_hist(watch)}")
-    print(f"  DANGEROUS selected: {len(danger_final)} (было {len(danger)})")
-    print(f"  WATCHLIST selected: {len(watch_final)} (было {len(watch)})")
+    print(f"  DANGEROUS total: {len(danger)}  by distance: {_dist_hist(danger)}")
+    print(f"  WATCHLIST total: {len(watch)}  by distance: {_dist_hist(watch)}")
+    print(f"  DANGEROUS selected: {len(danger_final)} (was {len(danger)})")
+    print(f"  WATCHLIST selected: {len(watch_final)} (was {len(watch)})")
 
     # Final list for TOP display = only dangerous
     clusters = danger_final
     watchlist = watch_final
 
-    print(f"\n{'='*72}\n  TOP-15 ОБЪЕКТОВ\n{'='*72}")
+    print(f"\n{'='*72}\n  TOP-15 OBJECTS\n{'='*72}")
     for i, t in enumerate(clusters[:15]):
         print(f"  #{i+1:2d}  dist={t['dist']:6.1f}м  score={t['score']:8.0f}  "
               f"hits={t['total_hits']:4d}  group={t['n_tracks']:2d}  "
@@ -1028,7 +1028,7 @@ def main(bag_dir, out_csv, n_workers=4):
 
     # ==== WATCHLIST (out-of-gauge, lower priority) ====
     if watchlist:
-        print(f"\n{'='*72}\n  WATCHLIST (вне габарита, менее критичные)\n{'='*72}")
+        print(f"\n{'='*72}\n  WATCHLIST (outside gauge, lower priority)\n{'='*72}")
         for i, t in enumerate(watchlist):
             print(f"  #{i+1:2d}  dist={t['dist']:6.1f}м  conf={t['confidence']:5.3f}  "
                   f"zone={t['zone']:8s}  "
@@ -1036,11 +1036,11 @@ def main(bag_dir, out_csv, n_workers=4):
 
     zone_count = Counter(t["zone"] for t in clusters)
     max_dist = max((t["dist"] for t in clusters), default=0)
-    print(f"\n  Всего уникальных: {len(clusters)}")
-    print(f"  Сильных (hits>300): {sum(1 for t in clusters if t['total_hits']>300)}")
-    print(f"  По зонам: {dict(zone_count)}")
+    print(f"\n  Total unique: {len(clusters)}")
+    print(f"  Strong (hits>300): {sum(1 for t in clusters if t['total_hits']>300)}")
+    print(f"  By zone: {dict(zone_count)}")
     print(f"  Max dist: {max_dist:.1f} м")
-    print(f"  Обработка: {dt:.1f}s ({processed/max(dt,1e-9):.1f} fps)")
+    print(f"  Processing: {dt:.1f}s ({processed/max(dt,1e-9):.1f} fps)")
 
 
 if __name__ == "__main__":
