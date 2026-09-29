@@ -45,6 +45,25 @@ If you run on Windows with Docker Desktop + Git Bash, three issues may bite:
 
 ## Quick start
 
+### Option A: Python-only (no Docker, recommended)
+
+Requires: Python 3.10+ and `pip install numpy scipy numba rosbags`.
+
+```bash
+# 1. Clone
+git clone https://github.com/Matymij/MetroLiDAR_Sentinel_Humble.git
+cd MetroLiDAR_Sentinel_Humble
+
+# 2. Install dependencies
+pip install numpy scipy numba rosbags
+
+# 3. Place ROS 2 bags under ./bags/, then run:
+python -u scripts/offline_pipeline_v23_FAST.py \
+    bags/cloud_with_fake_obj results/out.csv 8
+```
+
+### Option B: Docker
+
 ```bash
 # 1. Clone
 git clone https://github.com/Matymij/MetroLiDAR_Sentinel_Humble.git
