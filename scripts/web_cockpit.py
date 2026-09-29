@@ -16,7 +16,7 @@ import uvicorn
 
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
-from offline_pipeline_v21_FINAL import (
+from offline_pipeline_v23_FAST import (
     stream_frames, _process_frame_impl, rotate_roi_numba, CRITICAL_ZONES,
     Tracker,
 )

@@ -1,0 +1,140 @@
+
+###### doubleT_obstacle ######
+  TOP-15 ОБЪЕКТОВ
+========================================================================
+  # 1  dist=  34.5м  score=   11938  hits= 395  group= 6  zone=INSIDE    gauge=partial_bottom   size=( 1.12, 2.14, 2.38)  npts=153
+  # 2  dist=  44.6м  score=     571  hits= 119  group= 2  zone=INSIDE    gauge=full             size=( 0.25, 0.24, 0.40)  npts=10
+  # 3  dist=  82.9м  score=     161  hits=  58  group= 1  zone=INSIDE    gauge=partial_bottom   size=( 1.92, 2.67, 1.07)  npts=15
+  # 4  dist=  27.7м  score=     240  hits=  91  group= 1  zone=INSIDE    gauge=partial_side     size=( 1.21, 1.70, 0.52)  npts=13
+  # 5  dist=  40.3м  score=     946  hits= 264  group= 2  zone=INSIDE    gauge=full             size=( 0.26, 0.12, 0.52)  npts=5
+
+========================================================================
+  WATCHLIST (вне габарита, менее критичные)
+========================================================================
+  # 1  dist=  31.3м  conf=0.816  zone=RAIL      size=( 0.56, 0.32, 0.21)  npts=10
+  # 2  dist=  34.4м  conf=0.697  zone=RAIL      size=( 1.36, 0.33, 0.62)  npts=19
+  # 3  dist=  42.1м  conf=0.478  zone=RAIL      size=( 0.27, 0.10, 0.25)  npts=5
+
+  Всего уникальных: 5
+  Сильных (hits>300): 1
+  По зонам: {'INSIDE': 5}
+  Max dist: 82.9 м
+  Обработка: 9.6s (21.0 fps)
+
+###### doubleT_platform ######
+  # 7  dist= 149.5м  score=      26  hits=  19  group= 1  zone=INSIDE    gauge=rail_contact     size=( 1.03, 0.24, 2.27)  npts=3
+  # 8  dist=  72.8м  score=      86  hits=  39  group= 1  zone=NEAR      gauge=rail_contact     size=( 2.03, 0.10, 1.25)  npts=8
+  # 9  dist= 101.3м  score=      62  hits=  24  group= 1  zone=OUTSIDE   gauge=partial_bottom   size=( 1.17, 0.75, 2.65)  npts=12
+  #10  dist=  61.9м  score=     144  hits=  52  group= 1  zone=NEAR      gauge=partial_side     size=( 0.13, 0.20, 3.96)  npts=15
+
+========================================================================
+  WATCHLIST (вне габарита, менее критичные)
+========================================================================
+  # 1  dist=  26.5м  conf=0.724  zone=ABOVE     size=( 0.49, 0.14, 1.16)  npts=10
+  # 2  dist=  14.2м  conf=0.672  zone=ABOVE     size=( 0.99, 0.38, 0.31)  npts=9
+  # 3  dist=  82.4м  conf=0.252  zone=INSIDE    size=( 2.50, 4.03, 2.33)  npts=41
+  # 4  dist=  69.9м  conf=0.234  zone=OUTSIDE   size=( 0.14, 0.25, 0.63)  npts=5
+  # 5  dist= 119.2м  conf=0.351  zone=ABOVE     size=( 0.13, 1.13, 0.53)  npts=18
+  # 6  dist= 152.7м  conf=0.123  zone=ABOVE     size=( 0.07, 1.18, 1.04)  npts=17
+
+  Всего уникальных: 10
+  Сильных (hits>300): 0
+  По зонам: {'OUTSIDE': 2, 'ABOVE': 2, 'NEAR': 3, 'INSIDE': 3}
+  Max dist: 149.5 м
+  Обработка: 5.4s (63.4 fps)
+
+###### roundT_doubleT ######
+  # 2  dist=  50.4м  score=      93  hits=  31  group= 1  zone=INSIDE    gauge=rail_contact     size=( 0.78, 0.46, 3.33)  npts=19
+  # 3  dist=  89.7м  score=     140  hits=  35  group= 1  zone=INSIDE    gauge=partial_bottom   size=( 4.75, 1.14, 3.41)  npts=54
+  # 4  dist= 107.7м  score=      55  hits=  20  group= 1  zone=INSIDE    gauge=rail_contact     size=( 0.93, 0.42, 2.06)  npts=15
+  # 5  dist= 101.6м  score=      51  hits=  17  group= 1  zone=INSIDE    gauge=rail_contact     size=( 0.39, 0.59, 2.43)  npts=19
+
+========================================================================
+  WATCHLIST (вне габарита, менее критичные)
+========================================================================
+  # 1  dist=  21.3м  conf=0.287  zone=OUTSIDE   size=( 1.11, 0.47, 0.61)  npts=9
+  # 2  dist=  17.2м  conf=0.231  zone=OUTSIDE   size=( 0.36, 0.25, 0.18)  npts=5
+  # 3  dist=  66.2м  conf=0.409  zone=RAIL      size=( 0.65, 0.40, 1.04)  npts=6
+  # 4  dist=  80.6м  conf=0.113  zone=INSIDE    size=( 3.09, 4.56, 2.67)  npts=47
+  # 5  dist= 108.9м  conf=0.119  zone=OUTSIDE   size=( 0.59, 0.37, 0.21)  npts=4
+  # 6  dist= 157.4м  conf=0.175  zone=RAIL      size=( 0.04, 0.27, 0.24)  npts=3
+
+  Всего уникальных: 5
+  Сильных (hits>300): 0
+  По зонам: {'NEAR': 1, 'INSIDE': 4}
+  Max dist: 107.7 м
+  Обработка: 4.0s (62.3 fps)
+
+###### roundT_pressureGate_roundT ######
+========================================================================
+  # 1  dist=  31.8м  score=     914  hits= 170  group= 3  zone=INSIDE    gauge=full             size=( 0.56, 0.82, 1.14)  npts=5
+  # 2  dist=  89.9м  score=      58  hits=  30  group= 1  zone=INSIDE    gauge=partial_bottom   size=( 0.42, 1.70, 1.96)  npts=6
+  # 3  dist= 101.7м  score=     233  hits=  43  group= 2  zone=INSIDE    gauge=partial_bottom   size=( 2.59, 2.69, 1.39)  npts=14
+  # 4  dist= 135.6м  score=      37  hits=  17  group= 1  zone=INSIDE    gauge=partial_side     size=( 3.59, 3.11, 0.94)  npts=8
+  # 5  dist= 150.9м  score=      37  hits=  18  group= 1  zone=RAIL      gauge=partial_bottom   size=( 3.87, 1.27, 0.66)  npts=7
+
+========================================================================
+  WATCHLIST (вне габарита, менее критичные)
+========================================================================
+  # 1  dist=  13.9м  conf=0.635  zone=RAIL      size=( 1.33, 0.13, 0.88)  npts=28
+  # 2  dist=  23.8м  conf=0.610  zone=RAIL      size=( 0.21, 0.14, 0.33)  npts=5
+  # 3  dist=  84.6м  conf=0.202  zone=OUTSIDE   size=( 1.90, 0.30, 0.40)  npts=7
+  # 4  dist= 109.6м  conf=0.173  zone=OUTSIDE   size=( 1.81, 0.34, 0.54)  npts=4
+
+  Всего уникальных: 5
+  Сильных (hits>300): 0
+  По зонам: {'INSIDE': 4, 'RAIL': 1}
+  Max dist: 150.9 м
+  Обработка: 4.3s (61.8 fps)
+
+###### roundT_squareT_pressureGate_squareT ######
+  # 9  dist=  80.6м  score=    2157  hits= 217  group= 4  zone=NEAR      gauge=partial_bottom   size=( 0.95, 0.55, 1.94)  npts=11
+  #10  dist=  91.8м  score=     102  hits=  41  group= 1  zone=INSIDE    gauge=rail_contact     size=( 2.37, 0.33, 1.62)  npts=11
+  #11  dist=  76.1м  score=     577  hits=  84  group= 2  zone=INSIDE    gauge=partial_bottom   size=( 1.24, 2.61, 3.49)  npts=30
+  #12  dist=  87.8м  score=      67  hits=  32  group= 1  zone=INSIDE    gauge=partial_bottom   size=( 0.12, 1.23, 1.56)  npts=7
+
+========================================================================
+  WATCHLIST (вне габарита, менее критичные)
+========================================================================
+  # 1  dist=  31.7м  conf=0.701  zone=RAIL      size=( 2.00, 0.17, 0.35)  npts=16
+  # 2  dist=  18.4м  conf=0.600  zone=NEAR      size=( 2.30, 0.23, 0.50)  npts=19
+  # 3  dist=  64.5м  conf=0.491  zone=RAIL      size=( 0.37, 0.21, 0.71)  npts=5
+  # 4  dist=  78.4м  conf=0.394  zone=RAIL      size=( 2.00, 0.27, 0.32)  npts=5
+  # 5  dist= 144.9м  conf=0.266  zone=RAIL      size=( 0.12, 0.33, 0.22)  npts=3
+  # 6  dist= 138.4м  conf=0.081  zone=OUTSIDE   size=( 3.10, 0.27, 1.60)  npts=3
+
+  Всего уникальных: 12
+  Сильных (hits>300): 1
+  По зонам: {'INSIDE': 8, 'RAIL': 2, 'NEAR': 2}
+  Max dist: 158.9 м
+  Обработка: 8.8s (61.6 fps)
+
+###### squareT_platform_squareT_switch ######
+  # 9  dist= 107.3м  score=     929  hits=  95  group= 3  zone=INSIDE    gauge=partial_bottom   size=( 2.83, 4.14, 1.73)  npts=25
+  #10  dist= 137.3м  score=    1257  hits= 401  group= 1  zone=INSIDE    gauge=partial_side     size=( 3.87, 4.30, 0.92)  npts=22
+  #11  dist=  88.4м  score=     165  hits=  55  group= 1  zone=INSIDE    gauge=partial_bottom   size=( 4.31, 1.70, 1.23)  npts=19
+  #12  dist= 118.4м  score=     197  hits=  55  group= 2  zone=OUTSIDE   gauge=partial_side     size=( 0.20, 1.45, 0.74)  npts=5
+
+========================================================================
+  WATCHLIST (вне габарита, менее критичные)
+========================================================================
+  # 1  dist=  25.9м  conf=0.558  zone=RAIL      size=( 0.27, 0.21, 0.12)  npts=8
+  # 2  dist=   2.5м  conf=0.485  zone=RAIL      size=( 0.17, 0.24, 0.26)  npts=10
+  # 3  dist=  67.8м  conf=0.584  zone=RAIL      size=( 1.56, 0.44, 1.05)  npts=10
+  # 4  dist=  78.0м  conf=0.493  zone=RAIL      size=( 2.84, 0.31, 0.86)  npts=9
+  # 5  dist= 148.4м  conf=0.271  zone=RAIL      size=( 0.05, 0.26, 0.22)  npts=3
+  # 6  dist= 170.5м  conf=0.128  zone=INSIDE    size=( 2.20, 4.21, 0.84)  npts=12
+
+  Всего уникальных: 12
+  Сильных (hits>300): 4
+  По зонам: {'INSIDE': 7, 'RAIL': 1, 'OUTSIDE': 4}
+  Max dist: 137.3 м
+  Обработка: 14.2s (61.8 fps)
+
+===== РЎР’РћР”РљРђ =====
+doubleT_obstacle: 201 РєР°РґСЂРѕРІ, max=93.7 Рј
+doubleT_platform: 345 РєР°РґСЂРѕРІ, max=187.0 Рј
+roundT_doubleT: 252 РєР°РґСЂРѕРІ, max=157.4 Рј
+roundT_pressureGate_roundT: 268 РєР°РґСЂРѕРІ, max=156.6 Рј
+roundT_squareT_pressureGate_squareT: 545 РєР°РґСЂРѕРІ, max=189.6 Рј
+squareT_platform_squareT_switch: 877 РєР°РґСЂРѕРІ, max=186.9 Рј

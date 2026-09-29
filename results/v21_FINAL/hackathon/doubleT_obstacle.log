@@ -1,0 +1,47 @@
+starting streaming processing of bags/for_hackathon/doubleT_obstacle...
+  warmup done
+  [100 frames] raw=9 conf=6 fps=10.5 tracks=19
+  [200 frames] raw=8 conf=7 fps=20.9 tracks=32
+
+processing done: 201 frames in 9.6s (21.0 fps)
+raw candidates: 2073
+rejects: {'outside_far': 2407, 'shape': 947, 'too_big': 204, 'few_points': 2920, 'inside_wide': 1748, 'too_small': 819, 'near_wide': 441, 'plaus_horizontal_slab': 246, 'plaus_too_thin': 2217, 'plaus_lateral_wall': 793, 'rail_wide': 985, 'plaus_floor_noise': 998, 'plaus_too_flat': 63}
+
+========================================================================
+  ФИЛЬТРАЦИЯ ТРЕКОВ
+========================================================================
+  До фильтрации: 32 треков
+  Пути: {'STRAIGHT': 201}
+  Медианный filter_scale: 1.00
+  После confidence>=0.05: 31 (было 32)
+  После hits-фильтра (scale=1.00): 17
+  После отсева тонких рельс: 16
+  После размера>=0.15м: 16
+  После кластеризации: 8 уникальных объектов
+  После zone cap: 8 (было 8)
+  DANGEROUS всего: 5  по дистанциям: {'0-50': 4, '50-100': 1, '100-150': 0, '150-200': 0, '200-500': 0}
+  WATCHLIST всего: 3  по дистанциям: {'0-50': 3, '50-100': 0, '100-150': 0, '150-200': 0, '200-500': 0}
+  DANGEROUS selected: 5 (было 5)
+  WATCHLIST selected: 3 (было 3)
+
+========================================================================
+  TOP-15 ОБЪЕКТОВ
+========================================================================
+  # 1  dist=  34.5м  score=   11938  hits= 395  group= 6  zone=INSIDE    gauge=partial_bottom   size=( 1.12, 2.14, 2.38)  npts=153
+  # 2  dist=  44.6м  score=     571  hits= 119  group= 2  zone=INSIDE    gauge=full             size=( 0.25, 0.24, 0.40)  npts=10
+  # 3  dist=  82.9м  score=     161  hits=  58  group= 1  zone=INSIDE    gauge=partial_bottom   size=( 1.92, 2.67, 1.07)  npts=15
+  # 4  dist=  27.7м  score=     240  hits=  91  group= 1  zone=INSIDE    gauge=partial_side     size=( 1.21, 1.70, 0.52)  npts=13
+  # 5  dist=  40.3м  score=     946  hits= 264  group= 2  zone=INSIDE    gauge=full             size=( 0.26, 0.12, 0.52)  npts=5
+
+========================================================================
+  WATCHLIST (вне габарита, менее критичные)
+========================================================================
+  # 1  dist=  31.3м  conf=0.816  zone=RAIL      size=( 0.56, 0.32, 0.21)  npts=10
+  # 2  dist=  34.4м  conf=0.697  zone=RAIL      size=( 1.36, 0.33, 0.62)  npts=19
+  # 3  dist=  42.1м  conf=0.478  zone=RAIL      size=( 0.27, 0.10, 0.25)  npts=5
+
+  Всего уникальных: 5
+  Сильных (hits>300): 1
+  По зонам: {'INSIDE': 5}
+  Max dist: 82.9 м
+  Обработка: 9.6s (21.0 fps)

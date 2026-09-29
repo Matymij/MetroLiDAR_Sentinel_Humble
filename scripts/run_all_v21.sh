@@ -21,7 +21,7 @@ for b in "${BAGS[@]}"; do
   fi
   echo ""
   echo "###### $b ######"
-  python scripts/offline_pipeline_v21_FINAL.py \
+  python scripts/offline_pipeline_v23_FAST.py \
       "$bp" "results/v21_FINAL/hackathon/${b}.csv" 8 \
       2>&1 | tee "results/v21_FINAL/hackathon/${b}.log" | tail -20
 done
