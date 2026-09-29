@@ -713,8 +713,17 @@ class Tracker:
             del tracks[tid]
 
         min_hits = self.min_hits
-        return [{**d, "track_id": tid, "hits": h}
-                for d, tid, h in out if h >= min_hits]
+        result = []
+        for d, tid, h in out:
+            if h < min_hits:
+                continue
+            tr = tracks[tid]
+            # Temporal gating for near objects: 3/5 recent visibility
+            if d["dist"] < self.tgate_near_dist:
+                if sum(tr["history"]) < self.tgate_min_visible:
+                    continue
+            result.append({**d, "track_id": tid, "hits": h})
+        return result
 
 
 # ============================================================
