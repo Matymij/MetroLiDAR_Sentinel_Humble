@@ -11,7 +11,7 @@ Detects any object inside the train gauge (±1.35 m width, 0.20–3.40 m above r
 |---|---|
 | Frames processed | 15 269 (1510 + 2488 + 11 271) |
 | Unique objects detected | 3 880 |
-| Throughput | **100–156 fps** (avg. ~120, 12× real-time for 10 Hz LiDAR) |
+| Throughput | **88–156 fps** (avg. ~120, 9× real-time for 10 Hz LiDAR) |
 | Max detection range | **208.8 m** (Pandar128E3X physical limit) |
 | Gauge compliance zones | 6 (`INSIDE`, `NEAR`, `RAIL`, `ABOVE`, `OUTSIDE`, `BELOW`) |
 
@@ -62,7 +62,7 @@ sleep 5
 docker exec -it sentinel_main bash -c '
   source /opt/ros/humble/setup.bash
   source /ws/install/setup.bash
-  python3 -u /ws/scripts/offline_pipeline_v21_FINAL.py \
+  python3 -u /ws/scripts/offline_pipeline_v23_FAST.py \
     /bags/cloud_with_fake_obj /tmp/out.csv 6
 '
 
@@ -85,7 +85,7 @@ launch/         metro_sentinel.launch.py, algorithm_only.launch.py
 results/        final/final_ok.csv
 results_v9/     full CSV + logs for all three datasets
 rviz/           metro_sentinel.rviz
-scripts/        offline_pipeline_v21_FINAL.py (main), stream_zst_pipeline.py
+scripts/        offline_pipeline_v23_FAST.py (main), stream_zst_pipeline.py
 src/            ROS 2 packages (C++ preprocessor, Python detector, msgs)
 Datasets
 Bags are not committed (7+ GB each). The report uses three sources:
@@ -105,9 +105,9 @@ All results are in [`results_v9/`](results_v9/) as CSV + logs.
 - [README_RU.md](README_RU.md) — full Russian guide
 ---
 
-## v21 FINAL — Current pipeline
+## v23 FINAL — Current pipeline
 
-Main pipeline: `scripts/offline_pipeline_v21_FINAL.py`
+Main pipeline: `scripts/offline_pipeline_v23_FAST.py`
 
 ### Improvements over v11
 
@@ -127,7 +127,7 @@ Main pipeline: `scripts/offline_pipeline_v21_FINAL.py`
 
 ### Metrics (cloud_with_fake_obj, 1510 frames)
 
-| Metric | v11 | v21 |
+| Metric | v11 | v23 |
 |---|---|---|
 | DANGEROUS | 0 | 28 |
 | TOP-12 max dist | 190.5 m | 188.2 m |
