@@ -10,9 +10,9 @@ Detects any object inside the train gauge (±1.35 m width, 0.20–3.40 m above r
 | Metric | Value |
 |---|---|
 | Frames processed | 3 998 (1510 + 2488) |
-| Unique objects detected | 119 DANGEROUS |
-| Throughput | **83–156 fps** (Windows/Linux, ~8–16× real-time for 10 Hz LiDAR) |
-| Max detection range | **203.7 m** (observed, sensor limit 208 m) |
+| Unique objects detected | 86 DANGEROUS |
+| Throughput | **63–86 fps** (Windows) / **156 fps** (Linux), ~6–16× real-time for 10 Hz LiDAR |
+| Max detection range | **188.2 m** (TOP-12 confirmed; raw tracker max 203.7 m; sensor limit 208 m) |
 | Gauge compliance zones | 6 (`INSIDE`, `NEAR`, `RAIL`, `ABOVE`, `OUTSIDE`, `BELOW`) |
 
 ## Requirements
@@ -75,10 +75,11 @@ docker cp sentinel_main:/tmp/out.csv ./results/out.csv
 
 Typical runtime on a modern CPU:
 
-| Input | Frames | Time | Objects | Max dist |
+| Input | Frames | Time | DANGEROUS | Max dist |
 |---|---|---|---|---|
-| `cloud_with_fake_obj` | 1 510 | ~18 s | 65 | 203.7 m |
-| `for_hackathon` (6 bags) | 2 488 | ~50 s | 190 | 189.6 m |
+| `cloud_with_fake_obj` | 1 510 | 17.6 s | 26 | 188.2 m |
+| `for_hackathon` (6 bags) | 2 488 | 45.9 s | 60 | 158.9 m |
+| **TOTAL** | **3 998** | **63.5 s** | **86** | **188.2 m** |
 
 ## Repository layout
 

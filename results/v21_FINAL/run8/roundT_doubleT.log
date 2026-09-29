@@ -1,0 +1,50 @@
+starting streaming processing of bags/for_hackathon/roundT_doubleT...
+  warmup done
+  [100 frames] raw=1 conf=1 fps=25.8 tracks=31
+  [200 frames] raw=12 conf=3 fps=51.6 tracks=42
+
+processing done: 252 frames in 3.9s (64.8 fps)
+raw candidates: 2100
+rejects: {'few_points': 2203, 'outside_far': 1752, 'above_thin': 44, 'too_big': 573, 'plaus_lateral_wall': 325, 'outside_wall': 115, 'inside_wide': 1258, 'shape': 482, 'plaus_horizontal_slab': 85, 'above_too_high': 14, 'near_wide': 278, 'inside_tall': 26, 'plaus_floor_noise': 14, 'plaus_too_thin': 521, 'plaus_hanging_cable': 5, 'too_small': 353, 'plaus_ghost_far': 3, 'plaus_too_flat': 59, 'above_wide': 1, 'rail_wide': 44}
+
+========================================================================
+  TRACK FILTERING
+========================================================================
+  Before filter: 55 tracks
+  Path: {'STRAIGHT': 185, 'GENTLE_TURN': 67}
+  Median filter_scale: 1.00
+  After confidence>=0.05: 49 (was 55)
+  After hits-filter (scale=1.00): 12
+  After thin-rail reject: 12
+  After size>=0.15m: 12
+  After clustering: 11 unique objects
+  After zone cap: 11 (was 11)
+  DANGEROUS total: 5  by distance: {'0-50': 1, '50-100': 2, '100-150': 2, '150-200': 0, '200-500': 0}
+  WATCHLIST total: 6  by distance: {'0-50': 2, '50-100': 2, '100-150': 1, '150-200': 1, '200-500': 0}
+  DANGEROUS selected: 5 (was 5)
+  WATCHLIST selected: 6 (was 6)
+
+========================================================================
+  TOP-15 OBJECTS
+========================================================================
+  # 1  dist=  28.8ì  score=     141  hits=  55  group= 1  zone=NEAR      gauge=partial_side     size=( 1.22, 0.37, 0.99)  npts=12
+  # 2  dist=  50.4ì  score=      93  hits=  31  group= 1  zone=INSIDE    gauge=rail_contact     size=( 0.78, 0.46, 3.33)  npts=19
+  # 3  dist=  89.7ì  score=     140  hits=  35  group= 1  zone=INSIDE    gauge=partial_bottom   size=( 4.75, 1.14, 3.41)  npts=54
+  # 4  dist= 107.7ì  score=      55  hits=  20  group= 1  zone=INSIDE    gauge=rail_contact     size=( 0.93, 0.42, 2.06)  npts=15
+  # 5  dist= 101.6ì  score=      51  hits=  17  group= 1  zone=INSIDE    gauge=rail_contact     size=( 0.39, 0.59, 2.43)  npts=19
+
+========================================================================
+  WATCHLIST (outside gauge, lower priority)
+========================================================================
+  # 1  dist=  21.3ì  conf=0.287  zone=OUTSIDE   size=( 1.11, 0.47, 0.61)  npts=9
+  # 2  dist=  17.2ì  conf=0.231  zone=OUTSIDE   size=( 0.36, 0.25, 0.18)  npts=5
+  # 3  dist=  66.2ì  conf=0.409  zone=RAIL      size=( 0.65, 0.40, 1.04)  npts=6
+  # 4  dist=  80.6ì  conf=0.113  zone=INSIDE    size=( 3.09, 4.56, 2.67)  npts=47
+  # 5  dist= 108.9ì  conf=0.119  zone=OUTSIDE   size=( 0.59, 0.37, 0.21)  npts=4
+  # 6  dist= 157.4ì  conf=0.175  zone=RAIL      size=( 0.04, 0.27, 0.24)  npts=3
+
+  Total unique: 5
+  Strong (hits>300): 0
+  By zone: {'NEAR': 1, 'INSIDE': 4}
+  Max dist: 107.7 ì
+  Processing: 3.9s (64.8 fps)

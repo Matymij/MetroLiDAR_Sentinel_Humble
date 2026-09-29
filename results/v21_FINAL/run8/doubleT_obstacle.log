@@ -1,0 +1,47 @@
+starting streaming processing of bags/for_hackathon/doubleT_obstacle...
+  warmup done
+  [100 frames] raw=9 conf=6 fps=9.9 tracks=19
+  [200 frames] raw=8 conf=7 fps=19.8 tracks=32
+
+processing done: 201 frames in 10.1s (19.8 fps)
+raw candidates: 2073
+rejects: {'outside_far': 2407, 'shape': 947, 'too_big': 204, 'few_points': 2920, 'inside_wide': 1748, 'too_small': 819, 'near_wide': 441, 'plaus_horizontal_slab': 246, 'plaus_too_thin': 2217, 'plaus_lateral_wall': 793, 'rail_wide': 985, 'plaus_floor_noise': 998, 'plaus_too_flat': 63}
+
+========================================================================
+  TRACK FILTERING
+========================================================================
+  Before filter: 32 tracks
+  Path: {'STRAIGHT': 201}
+  Median filter_scale: 1.00
+  After confidence>=0.05: 31 (was 32)
+  After hits-filter (scale=1.00): 17
+  After thin-rail reject: 16
+  After size>=0.15m: 16
+  After clustering: 8 unique objects
+  After zone cap: 8 (was 8)
+  DANGEROUS total: 5  by distance: {'0-50': 4, '50-100': 1, '100-150': 0, '150-200': 0, '200-500': 0}
+  WATCHLIST total: 3  by distance: {'0-50': 3, '50-100': 0, '100-150': 0, '150-200': 0, '200-500': 0}
+  DANGEROUS selected: 5 (was 5)
+  WATCHLIST selected: 3 (was 3)
+
+========================================================================
+  TOP-15 OBJECTS
+========================================================================
+  # 1  dist=  34.5ì  score=   11938  hits= 395  group= 6  zone=INSIDE    gauge=partial_bottom   size=( 1.12, 2.14, 2.38)  npts=153
+  # 2  dist=  44.6ì  score=     571  hits= 119  group= 2  zone=INSIDE    gauge=full             size=( 0.25, 0.24, 0.40)  npts=10
+  # 3  dist=  82.9ì  score=     161  hits=  58  group= 1  zone=INSIDE    gauge=partial_bottom   size=( 1.92, 2.67, 1.07)  npts=15
+  # 4  dist=  27.7ì  score=     240  hits=  91  group= 1  zone=INSIDE    gauge=partial_side     size=( 1.21, 1.70, 0.52)  npts=13
+  # 5  dist=  40.3ì  score=     946  hits= 264  group= 2  zone=INSIDE    gauge=full             size=( 0.26, 0.12, 0.52)  npts=5
+
+========================================================================
+  WATCHLIST (outside gauge, lower priority)
+========================================================================
+  # 1  dist=  31.3ì  conf=0.816  zone=RAIL      size=( 0.56, 0.32, 0.21)  npts=10
+  # 2  dist=  34.4ì  conf=0.697  zone=RAIL      size=( 1.36, 0.33, 0.62)  npts=19
+  # 3  dist=  42.1ì  conf=0.478  zone=RAIL      size=( 0.27, 0.10, 0.25)  npts=5
+
+  Total unique: 5
+  Strong (hits>300): 1
+  By zone: {'INSIDE': 5}
+  Max dist: 82.9 ì
+  Processing: 10.1s (19.8 fps)

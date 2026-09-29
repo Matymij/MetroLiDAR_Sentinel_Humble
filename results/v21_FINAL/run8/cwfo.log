@@ -1,0 +1,71 @@
+starting streaming processing of bags/disk_copy/cloud_with_fake_obj...
+  warmup done
+  [100 frames] raw=7 conf=4 fps=5.7 tracks=33
+  [200 frames] raw=5 conf=3 fps=11.4 tracks=61
+  [300 frames] raw=5 conf=3 fps=17.1 tracks=71
+  [400 frames] raw=19 conf=8 fps=22.8 tracks=92
+  [500 frames] raw=17 conf=9 fps=28.5 tracks=122
+  [600 frames] raw=16 conf=11 fps=34.2 tracks=158
+  [700 frames] raw=15 conf=12 fps=39.9 tracks=200
+  [800 frames] raw=12 conf=4 fps=45.6 tracks=232
+  [900 frames] raw=2 conf=0 fps=51.2 tracks=246
+  [1000 frames] raw=5 conf=2 fps=56.9 tracks=253
+  [1100 frames] raw=3 conf=3 fps=62.6 tracks=259
+  [1200 frames] raw=22 conf=16 fps=68.3 tracks=301
+  [1300 frames] raw=13 conf=6 fps=73.9 tracks=336
+  [1400 frames] raw=15 conf=9 fps=79.6 tracks=370
+  [1500 frames] raw=13 conf=11 fps=85.2 tracks=408
+
+processing done: 1510 frames in 17.6s (85.8 fps)
+raw candidates: 17690
+rejects: {'few_points': 14104, 'outside_far': 12068, 'too_small': 2362, 'shape': 2119, 'inside_wide': 4667, 'plaus_lateral_wall': 2566, 'too_big': 3004, 'plaus_too_flat': 810, 'plaus_too_thin': 3710, 'rail_wide': 319, 'near_wide': 903, 'plaus_horizontal_slab': 459, 'plaus_floor_noise': 141, 'plaus_hanging_cable': 9, 'outside_wall': 283, 'above_thin': 154, 'plaus_ghost_far': 36, 'above_too_high': 70, 'plaus_ceiling': 7, 'above_wide': 15, 'inside_tall': 30}
+
+========================================================================
+  TRACK FILTERING
+========================================================================
+  Before filter: 409 tracks
+  Path: {'STRAIGHT': 1226, 'GENTLE_TURN': 278, 'SHARP_TURN': 6}
+  Median filter_scale: 1.00
+  After confidence>=0.05: 366 (was 409)
+  After hits-filter (scale=1.00): 182
+  After thin-rail reject: 181
+  After size>=0.15m: 181
+  After clustering: 48 unique objects
+  After zone cap: 48 (was 48)
+  Force-included FAR watch at 153.6m
+  DANGEROUS total: 26  by distance: {'0-50': 8, '50-100': 7, '100-150': 7, '150-200': 4, '200-500': 0}
+  WATCHLIST total: 22  by distance: {'0-50': 7, '50-100': 6, '100-150': 6, '150-200': 3, '200-500': 0}
+  DANGEROUS selected: 12 (was 26)
+  WATCHLIST selected: 6 (was 22)
+
+========================================================================
+  TOP-15 OBJECTS
+========================================================================
+  # 1  dist=  26.4ì  score=   72708  hits=1463  group=20  zone=INSIDE    gauge=full             size=( 0.67, 1.03, 0.08)  npts=11
+  # 2  dist=  33.4ì  score=    2828  hits= 307  group= 4  zone=INSIDE    gauge=partial_side     size=( 0.31, 1.10, 0.60)  npts=9
+  # 3  dist=  76.7ì  score=    7788  hits= 406  group= 8  zone=INSIDE    gauge=partial_side     size=( 1.34, 2.24, 0.88)  npts=10
+  # 4  dist=  72.0ì  score=    4332  hits= 371  group= 6  zone=INSIDE    gauge=partial_side     size=( 0.23, 0.64, 0.46)  npts=6
+  # 5  dist= 109.1ì  score=    1917  hits= 197  group= 5  zone=INSIDE    gauge=partial_side     size=( 0.99, 1.21, 0.46)  npts=6
+  # 6  dist= 111.3ì  score=    3239  hits= 162  group= 6  zone=INSIDE    gauge=partial_side     size=( 3.06, 3.03, 0.74)  npts=27
+  # 7  dist= 188.2ì  score=      47  hits=  26  group= 1  zone=INSIDE    gauge=full             size=( 0.14, 0.41, 0.88)  npts=5
+  # 8  dist= 167.0ì  score=     372  hits=  77  group= 3  zone=INSIDE    gauge=partial_bottom   size=( 3.16, 3.21, 0.47)  npts=4
+  # 9  dist=  20.0ì  score=    2184  hits= 196  group= 3  zone=INSIDE    gauge=partial_side     size=( 1.63, 1.73, 0.46)  npts=40
+  #10  dist=  30.5ì  score=     833  hits= 147  group= 2  zone=INSIDE    gauge=full             size=( 1.57, 1.76, 0.13)  npts=16
+  #11  dist=  23.7ì  score=    5985  hits= 454  group= 6  zone=NEAR      gauge=partial_side     size=( 0.75, 0.65, 0.68)  npts=8
+  #12  dist=  98.4ì  score=     842  hits= 113  group= 3  zone=INSIDE    gauge=rail_contact     size=( 2.10, 0.53, 2.33)  npts=11
+
+========================================================================
+  WATCHLIST (outside gauge, lower priority)
+========================================================================
+  # 1  dist=  21.9ì  conf=0.720  zone=RAIL      size=( 1.34, 0.30, 0.45)  npts=7
+  # 2  dist=  30.0ì  conf=0.712  zone=RAIL      size=( 1.19, 0.14, 0.33)  npts=7
+  # 3  dist=  86.4ì  conf=0.581  zone=RAIL      size=( 0.15, 0.25, 0.73)  npts=4
+  # 4  dist=  81.1ì  conf=0.350  zone=OUTSIDE   size=( 1.20, 0.51, 1.61)  npts=15
+  # 5  dist= 117.5ì  conf=0.351  zone=RAIL      size=( 1.10, 0.63, 0.75)  npts=7
+  # 6  dist= 153.6ì  conf=0.272  zone=RAIL      size=( 0.06, 0.27, 0.23)  npts=3
+
+  Total unique: 12
+  Strong (hits>300): 5
+  By zone: {'INSIDE': 11, 'NEAR': 1}
+  Max dist: 188.2 ì
+  Processing: 17.6s (85.8 fps)
