@@ -1,4 +1,4 @@
-# MetroLiDAR Sentinel — ROS 2 Humble
+# MetroLiDAR Sentinel — Детекция препятствий LiDAR
 
 **Детекция препятствий в габарите поезда и на рельсовом пути** по данным LiDAR Pandar128E3X.
 

@@ -1,4 +1,4 @@
-# MetroLiDAR Sentinel — ROS 2 Humble
+# MetroLiDAR Sentinel — Real-time LiDAR obstacle detection
 
 **Real-time 3D-LiDAR obstacle detection for a metro train envelope.**
 Detects any object inside the train gauge (±1.35 m width, 0.20–3.40 m above rail) or on the track, using a Pandar128E3X LiDAR mounted at 1075 mm above rail, centered on the train.
@@ -9,15 +9,18 @@ Detects any object inside the train gauge (±1.35 m width, 0.20–3.40 m above r
 
 | Metric | Value |
 |---|---|
-| Frames processed | 15 269 (1510 + 2488 + 11 271) |
-| Unique objects detected | 3 880 |
-| Throughput | **88–156 fps** (avg. ~120, 9× real-time for 10 Hz LiDAR) |
-| Max detection range | **208.8 m** (Pandar128E3X physical limit) |
+| Frames processed | 3 998 (1510 + 2488) |
+| Unique objects detected | 119 DANGEROUS |
+| Throughput | **88–156 fps** (Windows/Linux, 9× real-time for 10 Hz LiDAR) |
+| Max detection range | **189.6 m** (observed, sensor limit 208 m) |
 | Gauge compliance zones | 6 (`INSIDE`, `NEAR`, `RAIL`, `ABOVE`, `OUTSIDE`, `BELOW`) |
 
 ## Requirements
 
-- Docker Desktop 4.x (with `docker compose` v2)
+- Python 3.10+
+- pip install numpy scipy numba rosbags
+
+No Docker or ROS2 required.
 - Windows 10/11, Linux, or macOS
 - RAM: 8 GB min, 16 GB recommended
 - Disk: 50 GB for datasets (bags are **not** in the repo)
