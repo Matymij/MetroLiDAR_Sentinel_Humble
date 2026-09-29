@@ -55,5 +55,6 @@ activate_gpu.sh
 !results_v11_8w/*.log
 !results/v21_FINAL/run8/*.csv
 !results/v21_FINAL/run8/*.log
+!results/v21_FINAL/run8_wsl/*.csv
 
 # _archive/ is intentionally tracked (pipeline history for reviewers)

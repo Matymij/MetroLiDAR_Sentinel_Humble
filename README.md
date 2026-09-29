@@ -11,7 +11,7 @@ Detects any object inside the train gauge (±1.35 m width, 0.20–3.40 m above r
 |---|---|
 | Frames processed | 3 998 (1510 + 2488) |
 | Unique objects detected | 86 DANGEROUS |
-| Throughput | **63–86 fps** (Windows) / **156 fps** (Linux), ~6–16× real-time for 10 Hz LiDAR |
+| Throughput | **86 fps** (Windows, 8 threads) / **164 fps** (WSL2/Linux, 16 threads), ~8–16× real-time for 10 Hz LiDAR |
 | Max detection range | **188.2 m** (TOP-12 confirmed; raw tracker max 203.7 m; sensor limit 208 m) |
 | Gauge compliance zones | 6 (`INSIDE`, `NEAR`, `RAIL`, `ABOVE`, `OUTSIDE`, `BELOW`) |
 
