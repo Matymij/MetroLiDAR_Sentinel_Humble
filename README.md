@@ -103,3 +103,40 @@ All results are in [`results_v9/`](results_v9/) as CSV + logs.
 - [docs/ALGORITHM.md](docs/ALGORITHM.md) — detection algorithm
 - [docs/BENCHMARK.md](docs/BENCHMARK.md) — performance benchmarks
 - [README_RU.md](README_RU.md) — full Russian guide
+---
+
+## v21 FINAL — Current pipeline
+
+Main pipeline: `scripts/offline_pipeline_v21_FINAL.py`
+
+### Improvements over v11
+
+1. **Bbox-gauge intersection** — classifies by bounding box × envelope,
+   not just center. Distance-adaptive margins (5/10/15 cm).
+2. **Rail auto-detection** — objects touching rail = DANGEROUS regardless of height.
+3. **Two-list output**:
+   - DANGEROUS (top-12): in-gauge objects
+   - WATCHLIST (top-6): outside-gauge objects
+4. **Temporal gating** — near objects need 3/5 recent-frame visibility
+
+### New modules
+
+- `path_analysis.py` — rail curvature detection (STRAIGHT/GENTLE/SHARP)
+- `plausibility.py` — rejects impossible detections (walls, ceiling, ghost)
+- `confidence.py` — 0..1 score (track × size × zone × distance)
+
+### Metrics (cloud_with_fake_obj, 1510 frames)
+
+| Metric | v11 | v21 |
+|---|---|---|
+| DANGEROUS | 0 | 28 |
+| TOP-12 max dist | 190.5 m | 188.2 m |
+| Rail contacts | 0 | 2 |
+| FPS Windows | 89 | 84 |
+| FPS Linux | 156 | 156 |
+
+### Repository structure
+
+- `scripts/` — production pipeline only
+- `results/v21_FINAL/` — fresh benchmarks
+- `_archive/` — version history (v6–v20)

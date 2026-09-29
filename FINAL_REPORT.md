@@ -98,11 +98,11 @@ CSV со всеми объектами
 - `src/` — ROS 2 пакеты (C++ preprocessor, Python detector, msgs)
 
 **Результаты (в репозитории):**
-- `results_v9/v11_FINAL.csv` — прогон на `cloud_with_fake_obj` (1 510 кадров, 70 объектов, 190.5 м)
-- `results_v9/new_data_FINAL.csv` — прогон на `new_data` (11 271 кадр, 3 625 объектов, 205.4 м)
-- `results_v9/doubleT_obstacle.csv`, `doubleT_platform.csv`, `roundT_doubleT.csv`, `roundT_pressureGate_roundT.csv`, `roundT_squareT_pressureGate_squareT.csv`, `squareT_platform_squareT_switch.csv` — 6 bag'ов for_hackathon (2 488 кадров, 190 объектов, 208.8 м)
+- `_archive/results_history/results_v9/v11_FINAL.csv` — прогон на `cloud_with_fake_obj` (1 510 кадров, 70 объектов, 190.5 м)
+- `_archive/results_history/results_v9/new_data_FINAL.csv` — прогон на `new_data` (11 271 кадр, 3 625 объектов, 205.4 м)
+- `_archive/results_history/results_v9/doubleT_obstacle.csv`, `doubleT_platform.csv`, `roundT_doubleT.csv`, `roundT_pressureGate_roundT.csv`, `roundT_squareT_pressureGate_squareT.csv`, `squareT_platform_squareT_switch.csv` — 6 bag'ов for_hackathon (2 488 кадров, 190 объектов, 208.8 м)
 - `results/final/final_ok.csv` — финальная сводка
-- `results_v9/*.log` — логи прогонов
+- `_archive/results_history/results_v9/*.log` — логи прогонов
 
 **Документация:**
 - `README.md`, `README_RU.md` — инструкция запуска
