@@ -1,22 +1,22 @@
 starting streaming processing of bags/disk_copy/cloud_with_fake_obj...
   warmup done
-  [100 frames] raw=7 conf=4 fps=5.8 tracks=33
-  [200 frames] raw=5 conf=3 fps=11.6 tracks=61
-  [300 frames] raw=5 conf=3 fps=17.3 tracks=71
-  [400 frames] raw=19 conf=8 fps=23.1 tracks=92
-  [500 frames] raw=17 conf=9 fps=28.9 tracks=122
-  [600 frames] raw=16 conf=11 fps=34.6 tracks=158
-  [700 frames] raw=15 conf=12 fps=40.3 tracks=200
-  [800 frames] raw=12 conf=4 fps=46.1 tracks=232
-  [900 frames] raw=2 conf=0 fps=51.8 tracks=246
-  [1000 frames] raw=5 conf=2 fps=57.6 tracks=253
-  [1100 frames] raw=3 conf=3 fps=63.3 tracks=259
-  [1200 frames] raw=22 conf=16 fps=69.1 tracks=301
-  [1300 frames] raw=13 conf=6 fps=74.8 tracks=336
-  [1400 frames] raw=15 conf=9 fps=80.5 tracks=370
-  [1500 frames] raw=13 conf=11 fps=86.2 tracks=408
+  [100 frames] raw=7 conf=4 fps=5.5 tracks=33
+  [200 frames] raw=5 conf=3 fps=11.1 tracks=61
+  [300 frames] raw=5 conf=3 fps=16.6 tracks=71
+  [400 frames] raw=19 conf=8 fps=22.1 tracks=92
+  [500 frames] raw=17 conf=9 fps=27.6 tracks=122
+  [600 frames] raw=16 conf=11 fps=33.2 tracks=158
+  [700 frames] raw=15 conf=12 fps=38.7 tracks=200
+  [800 frames] raw=12 conf=4 fps=44.2 tracks=232
+  [900 frames] raw=2 conf=0 fps=49.7 tracks=246
+  [1000 frames] raw=5 conf=2 fps=55.2 tracks=253
+  [1100 frames] raw=3 conf=3 fps=60.7 tracks=259
+  [1200 frames] raw=22 conf=16 fps=66.2 tracks=301
+  [1300 frames] raw=13 conf=6 fps=71.7 tracks=336
+  [1400 frames] raw=15 conf=9 fps=77.1 tracks=370
+  [1500 frames] raw=13 conf=11 fps=82.6 tracks=408
 
-processing done: 1510 frames in 17.4s (86.8 fps)
+processing done: 1510 frames in 18.2s (83.2 fps)
 raw candidates: 17690
 rejects: {'few_points': 14104, 'outside_far': 12068, 'too_small': 2362, 'shape': 2119, 'inside_wide': 4667, 'plaus_lateral_wall': 2566, 'too_big': 3004, 'plaus_too_flat': 810, 'plaus_too_thin': 3710, 'rail_wide': 319, 'near_wide': 903, 'plaus_horizontal_slab': 459, 'plaus_floor_noise': 141, 'plaus_hanging_cable': 9, 'outside_wall': 283, 'above_thin': 154, 'plaus_ghost_far': 36, 'above_too_high': 70, 'plaus_ceiling': 7, 'above_wide': 15, 'inside_tall': 30}
 
@@ -68,4 +68,4 @@ rejects: {'few_points': 14104, 'outside_far': 12068, 'too_small': 2362, 'shape':
   Strong (hits>300): 5
   By zone: {'INSIDE': 11, 'NEAR': 1}
   Max dist: 188.2 ì
-  Processing: 17.4s (86.8 fps)
+  Processing: 18.2s (83.2 fps)
