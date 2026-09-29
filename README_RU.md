@@ -56,7 +56,7 @@ docker exec sentinel_main bash -c '
 docker exec -it sentinel_main bash -c '
   source /opt/ros/humble/setup.bash
   source /ws/install/setup.bash
-  python3 -u /ws/scripts/offline_pipeline_v11_FINAL.py /tmp/bag /tmp/out.csv 6
+  python3 -u /ws/scripts/offline_pipeline_v21_FINAL.py /tmp/bag /tmp/out.csv 6
 '
 
 # 8. Забрать результат
@@ -66,7 +66,7 @@ src/                          # ROS2 пакеты
 launch/                       # launch-файлы
 config/                       # params.yaml, fastdds.xml
 scripts/                      # Пайплайны
-  offline_pipeline_v11_FINAL.py   # ⭐ Основной пайплайн
+  offline_pipeline_v21_FINAL.py   # ⭐ Основной пайплайн
   stream_zst_pipeline.py      # Потоковая .zst
   consolidate_csv.py          # Пост-фильтр
   diagnose.py                 # Диагностика bag

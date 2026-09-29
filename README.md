@@ -62,7 +62,7 @@ sleep 5
 docker exec -it sentinel_main bash -c '
   source /opt/ros/humble/setup.bash
   source /ws/install/setup.bash
-  python3 -u /ws/scripts/offline_pipeline_v11_FINAL.py \
+  python3 -u /ws/scripts/offline_pipeline_v21_FINAL.py \
     /bags/cloud_with_fake_obj /tmp/out.csv 6
 '
 
@@ -85,7 +85,7 @@ launch/         metro_sentinel.launch.py, algorithm_only.launch.py
 results/        final/final_ok.csv
 results_v9/     full CSV + logs for all three datasets
 rviz/           metro_sentinel.rviz
-scripts/        offline_pipeline_v11_FINAL.py (main), stream_zst_pipeline.py
+scripts/        offline_pipeline_v21_FINAL.py (main), stream_zst_pipeline.py
 src/            ROS 2 packages (C++ preprocessor, Python detector, msgs)
 Datasets
 Bags are not committed (7+ GB each). The report uses three sources:

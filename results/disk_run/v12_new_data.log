@@ -1,0 +1,16 @@
+starting streaming processing of D:/SuperDataForHackathon/extracted/new_data...
+  warmup done
+Traceback (most recent call last):
+  File "C:\VSC\Проект №5\MetroLiDAR_Sentinel_Humble\scripts\offline_pipeline_v12_FINAL.py", line 835, in <module>
+    main(sys.argv[1], sys.argv[2],
+  File "C:\VSC\Проект №5\MetroLiDAR_Sentinel_Humble\scripts\offline_pipeline_v12_FINAL.py", line 693, in main
+    for res in executor.map(process_frame, stream_frames(bag_dir)):
+  File "C:\Users\Mat\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 610, in map
+    fs = [self.submit(fn, *args) for args in zip(*iterables)]
+  File "C:\Users\Mat\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 610, in <listcomp>
+    fs = [self.submit(fn, *args) for args in zip(*iterables)]
+  File "C:\VSC\Проект №5\MetroLiDAR_Sentinel_Humble\scripts\offline_pipeline_v12_FINAL.py", line 636, in stream_frames
+    msg = _TS.deserialize_cdr(rawdata, conn.msgtype)
+  File "C:\VSC\Проект №5\MetroLiDAR_Sentinel_Humble\.venv\lib\site-packages\rosbags\typesys\store.py", line 121, in deserialize_cdr
+    def deserialize_cdr(self, rawdata: bytes | memoryview, typename: str) -> object:
+KeyboardInterrupt

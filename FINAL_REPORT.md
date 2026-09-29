@@ -92,7 +92,7 @@ CSV со всеми объектами
 ## 10. Артефакты
 
 **Код:**
-- `scripts/offline_pipeline_v11_FINAL.py` — основной пайплайн (v11, 100–156 fps)
+- `scripts/offline_pipeline_v21_FINAL.py` — основной пайплайн (v21, 84–156 fps)
 - `scripts/stream_zst_pipeline.py` — потоковая обработка `.zst`
 - `scripts/offline_pipeline.py` — v9 (для сравнения)
 - `src/` — ROS 2 пакеты (C++ preprocessor, Python detector, msgs)
@@ -114,7 +114,7 @@ CSV со всеми объектами
 
 ### Основной pipeline: v11_FINAL
 
-**Файл:** `scripts/offline_pipeline_v11_FINAL.py`
+**Файл:** `scripts/offline_pipeline_v21_FINAL.py`
 
 **Изменения относительно v6:**
 - Замена `rosbag2_py` на `rosbags` — работает без ROS2 и Docker
