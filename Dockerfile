@@ -20,6 +20,8 @@ RUN python3 -m pip install --no-cache-dir \
     "scipy>=1.10" \
     "zstandard>=0.22" \
     "numba>=0.59" \
+    "tbb>=2021.10" \
+    "rosbags>=0.10" \
     "pybind11>=2.11" \
     "cupy-cuda12x>=13.0" \
     "fastapi>=0.110" \
